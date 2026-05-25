@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clave Connect — Your Key to the Right Attorney</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0A1628;
+  --gold: #C8A84B;
+  --white: #FFFFFF;
+  --text: #1a1a2e;
+  --muted: #6B7280;
+  --border: rgba(200,168,75,0.18);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+
+/* ── NAV ── */
+nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 3rem; background: var(--white);
+  border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100;
+}
+.logo { font-family: 'Lora', serif; font-size: 1.35rem; font-weight: 700; color: var(--navy); text-decoration: none; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.82rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-right { display: flex; align-items: center; gap: 1rem; }
+.lang-btn { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.78rem; font-weight: 500; cursor: pointer; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+.lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+.nav-cta { background: var(--gold); color: var(--navy); padding: 0.5rem 1.4rem; border-radius: 2rem; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+.nav-cta:hover { opacity: 0.85; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy); padding: 7rem 3rem 6rem;
+  text-align: center; position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(200,168,75,0.03) 40px, rgba(200,168,75,0.03) 41px);
+}
+.hero-inner { position: relative; max-width: 720px; margin: 0 auto; }
+.hero-badge {
+  display: inline-block; border: 1px solid rgba(200,168,75,0.6); color: var(--gold);
+  font-size: 0.7rem; font-weight: 600; padding: 0.35rem 1.2rem; border-radius: 2rem;
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 2rem;
+}
+.hero h1 {
+  font-family: 'Lora', serif; font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--white); line-height: 1.2; margin-bottom: 1.2rem; font-weight: 700;
+}
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero p { font-size: 1rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 2.5rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-gold { background: var(--gold); color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 600; text-decoration: none; transition: opacity 0.2s; display: inline-block; }
+.btn-gold:hover { opacity: 0.88; }
+.btn-ghost { border: 1px solid rgba(255,255,255,0.3); color: var(--white); padding: 0.9rem 2.2rem; border-radius: 2rem; font-size: 0.9rem; font-weight: 500; text-decoration: none; transition: border-color 0.2s; display: inline-block; }
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  display: flex; justify-content: center; align-items: center;
+  gap: 2.5rem; flex-wrap: wrap; padding: 1.1rem 3rem;
+}
+.trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
+.trust-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+/* ── SECTIONS ── */
+.section { padding: 5.5rem 3rem; background: var(--white); }
+.section + .section { border-top: 1px solid var(--border); }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: 0.68rem; font-weight: 700; color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.7rem; }
+.section-title { font-family: 'Lora', serif; font-size: clamp(1.9rem, 3vw, 2.6rem); color: var(--navy); line-height: 1.25; font-weight: 700; margin-bottom: 1rem; }
+.section-sub { font-size: 0.95rem; color: var(--muted); line-height: 1.8; max-width: 540px; }
+.center { text-align: center; }
+.center .section-sub { margin: 0 auto; }
+
+/* ── HOW IT WORKS ── */
+.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.step-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem 1.5rem; text-align: center; transition: box-shadow 0.2s; }
+.step-card:hover { box-shadow: 0 6px 24px rgba(200,168,75,0.1); }
+.step-num { font-family: 'Lora', serif; font-size: 2.8rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 1rem; }
+.step-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
+.step-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.7; }
+
+/* ── SERVICES ── */
+.dark-section { background: var(--white); padding: 5.5rem 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.dark-section .section-title { color: var(--navy); }
+.dark-section .section-sub { color: var(--muted); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 3rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+.service-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: box-shadow 0.2s, border-color 0.2s; }
+.service-card:hover { border-color: var(--gold); box-shadow: 0 4px 18px rgba(200,168,75,0.1); }
+.service-icon { font-size: 1.5rem; margin-bottom: 0.9rem; display: block; }
+.service-card h3 { font-size: 0.93rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+.service-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+
+/* ── VALUE / WHY US ── */
+.value-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.value-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.6rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); transition: box-shadow 0.2s; }
+.value-card:hover { box-shadow: 0 6px 24px rgba(200,168,75,0.1); }
+.value-icon { font-size: 1.4rem; margin-bottom: 0.8rem; display: block; }
+.value-card h3 { font-size: 0.93rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+.value-card p { font-size: 0.82rem; color: var(--muted); line-height: 1.7; }
+
+/* ── PRICING ── */
+.plans-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 3rem; max-width: 950px; }
+.plan-card { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 2.2rem; position: relative; transition: box-shadow 0.2s; }
+.plan-card:hover { box-shadow: 0 8px 28px rgba(200,168,75,0.12); }
+.plan-card.featured { border: 2px solid var(--gold); box-shadow: 0 4px 20px rgba(200,168,75,0.15); }
+.plan-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); font-size: 0.68rem; font-weight: 700; padding: 0.25rem 1rem; border-radius: 2rem; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
+.plan-label { font-size: 0.7rem; font-weight: 700; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.plan-price { font-family: 'Lora', serif; font-size: 3.2rem; font-weight: 700; color: var(--navy); line-height: 1; margin-bottom: 0.3rem; }
+.plan-price span { font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+.plan-desc { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.4rem; line-height: 1.65; }
+.plan-features { list-style: none; margin-bottom: 2rem; }
+.plan-features li { display: flex; align-items: flex-start; gap: 0.55rem; font-size: 0.82rem; color: #444; padding: 0.42rem 0; border-top: 1px solid rgba(200,168,75,0.12); }
+.plan-features li:first-child { border-top: none; }
+.check { color: var(--gold); font-size: 0.75rem; margin-top: 3px; flex-shrink: 0; }
+.plan-btn { display: block; text-align: center; padding: 0.85rem; background: var(--navy); color: var(--white); border-radius: 2rem; font-size: 0.85rem; font-weight: 600; text-decoration: none; transition: background 0.2s; }
+.plan-btn:hover { background: var(--gold); color: var(--navy); }
+.plan-card.featured .plan-btn { background: var(--gold); color: var(--navy); }
+.plan-card.featured .plan-btn:hover { opacity: 0.88; background: var(--gold); }
+
+/* ── WHAT TO EXPECT ── */
+.expect-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.expect-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+.expect-icon { font-size: 1.6rem; margin-bottom: 0.9rem; display: block; }
+.expect-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.6rem; }
+.expect-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.75; }
+
+/* ── CONTACT (dark) ── */
+.contact-section { background: var(--navy); padding: 5.5rem 3rem; }
+.contact-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 5rem; align-items: start; }
+.contact-info .section-label { color: var(--gold); }
+.contact-info h2 { font-family: 'Lora', serif; font-size: 2.2rem; color: var(--white); font-weight: 700; margin-bottom: 1rem; line-height: 1.25; }
+.contact-info p { font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 1.8rem; }
+.contact-detail { display: flex; align-items: center; gap: 0.7rem; font-size: 0.85rem; color: rgba(255,255,255,0.8); font-weight: 500; margin-bottom: 0.75rem; }
+.contact-detail .icon { color: var(--gold); font-size: 1rem; }
+.form-wrap { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,168,75,0.18); border-radius: 18px; padding: 2.2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.55); margin-bottom: 0.4rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.75rem 1rem; background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,168,75,0.25); border-radius: 10px;
+  font-size: 0.87rem; font-family: 'Inter', sans-serif; color: var(--white); outline: none; transition: border-color 0.2s;
+}
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+.form-group select option { background: var(--navy); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+.form-group textarea { resize: vertical; min-height: 90px; }
+.form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 0.95rem; border-radius: 2rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
+.form-submit:hover { opacity: 0.88; }
+
+/* ── FOOTER ── */
+footer { background: #060e1a; padding: 2.5rem 3rem; text-align: center; }
+.footer-logo { font-family: 'Lora', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.5rem; font-weight: 700; }
+.footer-logo span { color: var(--gold); }
+footer p { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 0.5rem; line-height: 1.7; max-width: 680px; margin-left: auto; margin-right: auto; }
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hero { padding: 4.5rem 1.5rem 3.5rem; }
+  .section, .dark-section, .contact-section { padding: 4rem 1.5rem; }
+  .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">Clave <span>Connect</span></a>
+  <ul class="nav-links">
+    <li><a href="#how" data-en="How it works" data-es="Cómo funciona">How it works</a></li>
+    <li><a href="#services" data-en="Services" data-es="Servicios">Services</a></li>
+    <li><a href="#pricing" data-en="Pricing" data-es="Precios">Pricing</a></li>
+    <li><a href="#expect" data-en="What to Expect" data-es="Qué Esperar">What to Expect</a></li>
+    <li><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">🌐 Español</button>
+    <a href="#contact" class="nav-cta" data-en="Get started" data-es="Comenzar">Get started</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge" data-en="English &amp; Español · Washington &amp; California" data-es="Inglés &amp; Español · Washington y California">English &amp; Español · Washington &amp; California</div>
+    <h1 data-en='Your personal <em>key</em> to the right attorney' data-es='Tu <em>clave</em> personal para el abogado correcto'>Your personal <em>key</em> to the right attorney</h1>
+    <p data-en="We find, vet, and connect you with the best legal professional for your case — in English or Spanish. One call, no stress, no confusion." data-es="Buscamos, verificamos y te conectamos con el mejor profesional legal para tu caso — en inglés o español. Una llamada, sin estrés, sin confusión.">We find, vet, and connect you with the best legal professional for your case — in English or Spanish. One call, no stress, no confusion.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold" data-en="Find my attorney →" data-es="Encontrar mi abogado →">Find my attorney →</a>
+      <a href="#how" class="btn-ghost" data-en="How it works" data-es="Cómo funciona">How it works</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div><span data-en="Personal attention in English &amp; Spanish" data-es="Atención personal en inglés y español">Personal attention in English &amp; Spanish</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span data-en="Response within 24 hours" data-es="Respuesta en menos de 24 horas">Response within 24 hours</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span data-en="No legal jargon" data-es="Sin términos legales confusos">No legal jargon</span></div>
+  <div class="trust-item"><div class="trust-dot"></div><span data-en="We stay with you every step" data-es="Te acompañamos en cada paso">We stay with you every step</span></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section center" id="how">
+  <div class="section-inner">
+    <div class="section-label" data-en="The process" data-es="El proceso">The process</div>
+    <div class="section-title" data-en="Simple. Personal. Done right." data-es="Simple. Personal. Bien hecho.">Simple. Personal. Done right.</div>
+    <p class="section-sub" data-en="You tell us your situation once — we take care of everything else so you can focus on what matters." data-es="Nos cuentas tu situación una sola vez — nosotros nos encargamos de todo lo demás.">You tell us your situation once — we take care of everything else so you can focus on what matters.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3 data-en="Tell us your case" data-es="Cuéntanos tu caso">Tell us your case</h3>
+        <p data-en="Fill out our form or text/WhatsApp us. You explain your situation once — we listen and take notes." data-es="Llena el formulario o escríbenos por texto o WhatsApp. Explicas tu situación una sola vez.">Fill out our form or text/WhatsApp us. You explain your situation once — we listen and take notes.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3 data-en="We find your match" data-es="Encontramos tu match">We find your match</h3>
+        <p data-en="We search our network of vetted attorneys and paralegals specialized in your exact situation." data-es="Buscamos en nuestra red de abogados y paralegales verificados, especializados en tu caso.">We search our network of vetted attorneys and paralegals specialized in your exact situation.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3 data-en="We prepare you" data-es="Te preparamos">We prepare you</h3>
+        <p data-en="We send you the key questions to ask, the documents to bring, and a summary of what to expect." data-es="Te enviamos las preguntas clave, los documentos necesarios y un resumen de qué esperar.">We send you the key questions to ask, the documents to bring, and a summary of what to expect.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <h3 data-en="We follow up" data-es="Te damos seguimiento">We follow up</h3>
+        <p data-en="We check in after your appointment and stay by your side — so you're never alone in the process." data-es="Nos comunicamos después de tu cita y nos quedamos a tu lado durante todo el proceso.">We check in after your appointment and stay by your side — so you're never alone in the process.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="dark-section" id="services">
+  <div class="section-inner center">
+    <div class="section-label" data-en="Areas we cover" data-es="Áreas que cubrimos">Areas we cover</div>
+    <div class="section-title" data-en="We connect you with experts in every area" data-es="Te conectamos con expertos en cada área">We connect you with experts in every area</div>
+    <p class="section-sub" data-en="From immigration to family law — we have the right professional for your situation." data-es="Desde inmigración hasta derecho familiar — tenemos al profesional correcto para tu situación.">From immigration to family law — we have the right professional for your situation.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">✈️</span>
+      <h3 data-en="Immigration" data-es="Inmigración">Immigration</h3>
+      <p data-en="Visas, green cards, DACA, naturalization, asylum, deportation defense." data-es="Visas, green cards, DACA, naturalización, asilo, defensa contra deportación.">Visas, green cards, DACA, naturalization, asylum, deportation defense.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">👨‍👩‍👧</span>
+      <h3 data-en="Family Law" data-es="Derecho Familiar">Family Law</h3>
+      <p data-en="Divorce, custody, child support, adoptions, domestic violence protection." data-es="Divorcio, custodia, manutención, adopciones, órdenes de protección.">Divorce, custody, child support, adoptions, domestic violence protection.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">⚖️</span>
+      <h3 data-en="Work &amp; Injury" data-es="Laboral y Lesiones">Work &amp; Injury</h3>
+      <p data-en="Workplace accidents, workers' comp, discrimination, wrongful termination." data-es="Accidentes de trabajo, compensación, discriminación, despido injustificado.">Workplace accidents, workers' comp, discrimination, wrongful termination.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏠</span>
+      <h3 data-en="Real Estate" data-es="Bienes Raíces">Real Estate</h3>
+      <p data-en="Buying, selling, disputes, contracts, landlord-tenant issues." data-es="Compra, venta, disputas, contratos, problemas entre arrendador e inquilino.">Buying, selling, disputes, contracts, landlord-tenant issues.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📄</span>
+      <h3 data-en="Business &amp; Contracts" data-es="Negocios y Contratos">Business &amp; Contracts</h3>
+      <p data-en="LLC formation, contracts review, partnership agreements." data-es="Formación de LLC, revisión de contratos, acuerdos de sociedad.">LLC formation, contracts review, partnership agreements.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛡️</span>
+      <h3 data-en="Criminal Defense" data-es="Defensa Criminal">Criminal Defense</h3>
+      <p data-en="DUI, misdemeanors, felonies — urgent cases connected fast." data-es="DUI, delitos menores, cargos graves — casos urgentes atendidos rápido.">DUI, misdemeanors, felonies — urgent cases connected fast.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="section" id="why">
+  <div class="section-inner">
+    <div class="section-label" data-en="Why choose us" data-es="Por qué elegirnos">Why choose us</div>
+    <div class="section-title" data-en="What makes us worth every dollar" data-es="Lo que nos hace valer cada dólar">What makes us worth every dollar</div>
+    <p class="section-sub" data-en="Unlike automated online platforms, we are real people who guide you personally — in your language, at your pace." data-es="A diferencia de las plataformas digitales automatizadas, somos personas reales que te guían personalmente — en tu idioma, a tu ritmo.">Unlike automated online platforms, we are real people who guide you personally — in your language, at your pace.</p>
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="value-icon">🔑</span>
+        <h3 data-en="3 key questions for your meeting" data-es="3 preguntas clave para tu reunión">3 key questions for your meeting</h3>
+        <p data-en="We give you a personalized list of the most important questions to ask — so you don't waste a single minute of your consultation." data-es="Te damos una lista personalizada con las preguntas más importantes para que no pierdas ni un minuto de tu consulta.">We give you a personalized list of the most important questions to ask — so you don't waste a single minute of your consultation.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">📋</span>
+        <h3 data-en="Document checklist" data-es="Lista de documentos">Document checklist</h3>
+        <p data-en="We tell you exactly what to bring based on your specific case, so you arrive fully prepared and confident." data-es="Te decimos exactamente qué documentos llevar según tu caso específico, para que llegues completamente preparado.">We tell you exactly what to bring based on your specific case, so you arrive fully prepared and confident.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">📝</span>
+        <h3 data-en="Written case summary" data-es="Resumen escrito de tu caso">Written case summary</h3>
+        <p data-en="We write a clear summary so the attorney is already informed before you meet — saving you time and money." data-es="Redactamos un resumen claro para que el abogado llegue informado — ahorrándote tiempo y dinero.">We write a clear summary so the attorney is already informed before you meet — saving you time and money.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">💬</span>
+        <h3 data-en="Text or WhatsApp support" data-es="Apoyo por texto o WhatsApp">Text or WhatsApp support</h3>
+        <p data-en="We're available by text or WhatsApp to answer questions, translate documents, and remind you of important dates." data-es="Estamos disponibles por mensaje de texto o WhatsApp para responder preguntas, traducir y recordarte fechas importantes.">We're available by text or WhatsApp to answer questions, translate documents, and remind you of important dates.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🔄</span>
+        <h3 data-en="Not happy? We search again" data-es="¿No te convence? Buscamos otro">Not happy? We search again</h3>
+        <p data-en="If the attorney isn't the right fit, we find you another one at no extra cost. Your satisfaction is our priority." data-es="Si el abogado no es el indicado, te buscamos otro sin costo adicional. Tu satisfacción es nuestra prioridad.">If the attorney isn't the right fit, we find you another one at no extra cost. Your satisfaction is our priority.</p>
+      </div>
+      <div class="value-card">
+        <span class="value-icon">🤝</span>
+        <h3 data-en="A team that understands you" data-es="Un equipo que te entiende">A team that understands you</h3>
+        <p data-en="We are a husband and wife team who genuinely care. We speak your language and understand your concerns." data-es="Somos un equipo de esposos que genuinamente se preocupa por ti. Hablamos tu idioma y entendemos tus preocupaciones.">We are a husband and wife team who genuinely care. We speak your language and understand your concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="section-label" data-en="Our packages" data-es="Nuestros paquetes">Our packages</div>
+    <div class="section-title" data-en="Fair, transparent pricing" data-es="Precios justos y transparentes">Fair, transparent pricing</div>
+    <p class="section-sub" data-en="You pay us for our concierge service. Your attorney charges separately. No hidden fees — ever." data-es="Nos pagas por nuestro servicio de concierge. El abogado cobra sus honorarios por separado. Sin cargos ocultos — nunca.">You pay us for our concierge service. Your attorney charges separately. No hidden fees — ever.</p>
+    <div class="plans-grid">
+
+      <div class="plan-card">
+        <div class="plan-label" data-en="Basic" data-es="Básico">Basic</div>
+        <div class="plan-price">$80 <span data-en="one-time" data-es="pago único">one-time</span></div>
+        <div class="plan-desc" data-en="We find the best attorney for your budget and get you ready for your first appointment." data-es="Encontramos el mejor abogado según tu presupuesto y te preparamos para tu primera cita.">We find the best attorney for your budget and get you ready for your first appointment.</div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span><span data-en="Attorney search based on your budget" data-es="Búsqueda de abogado según tu presupuesto">Attorney search based on your budget</span></li>
+          <li><span class="check">✓</span><span data-en="Best match connected within 24 hours" data-es="Mejor opción conectada en menos de 24 horas">Best match connected within 24 hours</span></li>
+          <li><span class="check">✓</span><span data-en="3 key questions for your first meeting" data-es="3 preguntas clave para tu primera cita">3 key questions for your first meeting</span></li>
+          <li><span class="check">✓</span><span data-en="Document checklist for your case" data-es="Lista de documentos para tu caso">Document checklist for your case</span></li>
+          <li><span class="check">✓</span><span data-en="English and Spanish support" data-es="Atención en inglés y español">English and Spanish support</span></li>
+        </ul>
+        <a href="#contact" class="plan-btn" data-en="Get started" data-es="Comenzar">Get started</a>
+      </div>
+
+      <div class="plan-card featured">
+        <div class="plan-badge" data-en="Most popular" data-es="El más popular">Most popular</div>
+        <div class="plan-label" data-en="Plus" data-es="Plus">Plus</div>
+        <div class="plan-price">$120 <span data-en="one-time" data-es="pago único">one-time</span></div>
+        <div class="plan-desc" data-en="Full concierge experience. We compare your options, prepare you completely, and stay with you for 40 days." data-es="Experiencia concierge completa. Comparamos tus opciones, te preparamos completamente y te acompañamos 40 días.">Full concierge experience. We compare your options, prepare you completely, and stay with you for 40 days.</div>
+        <ul class="plan-features">
+          <li><span class="check">✓</span><span data-en="Attorney search based on your budget" data-es="Búsqueda de abogado según tu presupuesto">Attorney search based on your budget</span></li>
+          <li><span class="check">✓</span><span data-en="Best match connected within 24 hours" data-es="Mejor opción conectada en menos de 24 horas">Best match connected within 24 hours</span></li>
+          <li><span class="check">✓</span><span data-en="3 key questions for your first meeting" data-es="3 preguntas clave para tu primera cita">3 key questions for your first meeting</span></li>
+          <li><span class="check">✓</span><span data-en="Document checklist for your case" data-es="Lista de documentos para tu caso">Document checklist for your case</span></li>
+          <li><span class="check">✓</span><span data-en="English and Spanish support" data-es="Atención en inglés y español">English and Spanish support</span></li>
+          <li><span class="check">✓</span><span data-en="Budget analysis: we compare attorneys by fees, experience and value so you choose with confidence" data-es="Análisis de presupuesto: comparamos abogados por honorarios, experiencia y valor para que elijas con confianza">Budget analysis: we compare attorneys by fees, experience and value so you choose with confidence</span></li>
+          <li><span class="check">✓</span><span data-en="Documents organized and case summary sent to your attorney before your appointment" data-es="Documentos organizados y resumen de tu caso enviado al abogado antes de tu cita">Documents organized and case summary sent to your attorney before your appointment</span></li>
+          <li><span class="check">✓</span><span data-en="40-day follow-up: we keep you informed and answer your questions throughout the process" data-es="Seguimiento de 40 días: te mantenemos informado y respondemos tus preguntas durante el proceso">40-day follow-up: we keep you informed and answer your questions throughout the process</span></li>
+          <li><span class="check">✓</span><span data-en="If not the right fit, we find another attorney at no extra cost" data-es="Si no es el indicado, buscamos otro abogado sin costo adicional">If not the right fit, we find another attorney at no extra cost</span></li>
+        </ul>
+        <a href="#contact" class="plan-btn" data-en="Get started" data-es="Comenzar">Get started</a>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-label" data-en="Paralegal Connect" data-es="Conexión Paralegal">Paralegal Connect</div>
+        <div class="plan-price">$100 <span data-en="one-time" data-es="pago único">one-time</span></div>
+        <div class="plan-desc" data-en="Connect with a certified paralegal for documents, forms, and filings." data-es="Conéctate con un paralegal certificado para documentos, formularios y trámites.">Connect with a certified paralegal for documents, forms, and filings.</div>
+        <ul class="plan-features">
+          <li><span class="check">✦</span><span data-en="Paralegal matching for your case" data-es="Búsqueda del paralegal ideal">Paralegal matching for your case</span></li>
+          <li><span class="check">✦</span><span data-en="Document completeness review" data-es="Revisión de documentos completos">Document completeness review</span></li>
+          <li><span class="check">✦</span><span data-en="Legal terms in plain language" data-es="Términos legales en lenguaje simple">Legal terms in plain language</span></li>
+          <li><span class="check">✦</span><span data-en="Follow-up to confirm delivery" data-es="Seguimiento para confirmar entrega">Follow-up to confirm delivery</span></li>
+          <li><span class="check">✦</span><span data-en="English &amp; Spanish support" data-es="Atención en inglés y español">English &amp; Spanish support</span></li>
+        </ul>
+        <a href="#contact" class="plan-btn" data-en="Get started" data-es="Comenzar">Get started</a>
+      </div>
+
+    </div>
+    <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);" data-en="* Clave Connect is a concierge and matching service — not a law firm. We do not provide legal advice. Attorneys and paralegals charge their own fees separately." data-es="* Clave Connect es un servicio de concierge — no es una firma de abogados. No brindamos asesoría legal. Los abogados y paralegales cobran sus propios honorarios por separado.">* Clave Connect is a concierge and matching service — not a law firm. We do not provide legal advice. Attorneys and paralegals charge their own fees separately.</p>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="section" id="expect">
+  <div class="section-inner">
+    <div class="section-label" data-en="Before you reach out" data-es="Antes de contactarnos">Before you reach out</div>
+    <div class="section-title" data-en="What to expect when you work with us" data-es="Qué esperar cuando trabajas con nosotros">What to expect when you work with us</div>
+    <p class="section-sub" data-en="We want to be fully transparent about who we are and how we work, so there are no surprises." data-es="Queremos ser completamente transparentes sobre quiénes somos y cómo trabajamos, para que no haya sorpresas.">We want to be fully transparent about who we are and how we work, so there are no surprises.</p>
+    <div class="expect-grid">
+      <div class="expect-card">
+        <div class="expect-icon">⚠️</div>
+        <h3 data-en="We are not attorneys" data-es="No somos abogados">We are not attorneys</h3>
+        <p data-en="Clave Connect is a concierge and matching service. We do not give legal advice, represent you in court, or practice law. What we do is find you the right licensed professional and make sure you arrive prepared." data-es="Clave Connect es un servicio de concierge e intermediación. No damos asesoría legal, no te representamos en corte ni ejercemos derecho. Lo que hacemos es encontrarte al profesional licenciado correcto y asegurarnos de que llegues preparado.">Clave Connect is a concierge and matching service. We do not give legal advice, represent you in court, or practice law. What we do is find you the right licensed professional and make sure you arrive prepared.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">💵</div>
+        <h3 data-en="Two separate fees" data-es="Dos cobros separados">Two separate fees</h3>
+        <p data-en="You pay Clave Connect for our matching and preparation service. Your attorney or paralegal charges their own fees separately. We will always be upfront about what each attorney charges before you commit." data-es="Le pagas a Clave Connect por nuestro servicio de conexión y preparación. Tu abogado o paralegal cobra sus honorarios por separado. Siempre te informamos cuánto cobra cada abogado antes de que te comprometas.">You pay Clave Connect for our matching and preparation service. Your attorney or paralegal charges their own fees separately. We will always be upfront about what each attorney charges before you commit.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">⏱️</div>
+        <h3 data-en="What happens after you contact us" data-es="Qué pasa después de contactarnos">What happens after you contact us</h3>
+        <p data-en="You reach out, we respond within 24 hours. We listen to your situation, recommend the right plan, and once you confirm we get to work right away. No long waits, no confusing paperwork on your end." data-es="Nos contactas, te respondemos en menos de 24 horas. Escuchamos tu situación, recomendamos el plan correcto y una vez que confirmas nos ponemos a trabajar. Sin largas esperas ni papeleo confuso de tu parte.">You reach out, we respond within 24 hours. We listen to your situation, recommend the right plan, and once you confirm we get to work right away. No long waits, no confusing paperwork on your end.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon">🤝</div>
+        <h3 data-en="We are here for you, not the attorney" data-es="Estamos aquí por ti, no por el abogado">We are here for you, not the attorney</h3>
+        <p data-en="We work for you. Our goal is to make sure you feel confident and informed throughout your legal process. If something is not working, we will tell you and help you find a better option." data-es="Trabajamos para ti. Nuestro objetivo es que te sientas seguro e informado durante tu proceso legal. Si algo no está funcionando, te lo decimos y te ayudamos a encontrar una mejor opción.">We work for you. Our goal is to make sure you feel confident and informed throughout your legal process. If something is not working, we will tell you and help you find a better option.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label" data-en="Get in touch" data-es="Contáctanos">Get in touch</div>
+      <h2 data-en="Ready to find the right attorney?" data-es="¿Listo/a para encontrar al abogado correcto?">Ready to find the right attorney?</h2>
+      <p data-en="Tell us your situation. We'll respond within 24 hours and guide you every step of the way — in English or Spanish." data-es="Cuéntanos tu situación. Te responderemos en menos de 24 horas y te guiaremos en cada paso — en inglés o español.">Tell us your situation. We'll respond within 24 hours and guide you every step of the way — in English or Spanish.</p>
+      <div class="contact-detail"><span class="icon">📍</span><span data-en="Serving all of Washington &amp; California" data-es="Servicio en todo Washington y California">Serving all of Washington &amp; California</span></div>
+      <div class="contact-detail"><span class="icon">💬</span><span data-en="Text, WhatsApp &amp; Instagram: @claveconnect" data-es="Texto, WhatsApp e Instagram: @claveconnect">Text, WhatsApp &amp; Instagram: @claveconnect</span></div>
+      <div class="contact-detail"><span class="icon">✉️</span> claveconnectwc@gmail.com</div>
+      <div class="contact-detail"><span class="icon">⏰</span><span data-en="Mon–Sat, 9am–7pm" data-es="Lun–Sáb, 9am–7pm">Mon–Sat, 9am–7pm</span></div>
+    </div>
+    <div class="form-wrap">
+      <form onsubmit="return false;">
+        <input type="hidden" name="access_key" value="ddf1ad2f-cb58-4f47-acd3-3c59881cdc11">
+        <input type="hidden" name="subject" value="Nueva solicitud — Clave Connect">
+        <input type="hidden" name="from_name" value="Clave Connect Website">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-en="First name" data-es="Nombre">First name</label>
+            <input type="text" name="first_name" id="first_name" placeholder="María" required>
+          </div>
+          <div class="form-group">
+            <label data-en="Last name" data-es="Apellido">Last name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="González" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-en="Email" data-es="Correo electrónico">Email</label>
+          <input type="email" name="email" id="email" placeholder="maria@email.com" required>
+        </div>
+        <div class="form-group">
+          <label data-en="Phone / Text / WhatsApp" data-es="Teléfono / Texto / WhatsApp">Phone / Text / WhatsApp</label>
+          <input type="tel" name="phone" id="phone" placeholder="+1 (425) 000-0000">
+        </div>
+        <div class="form-group">
+          <label data-en="Legal area" data-es="Área legal">Legal area</label>
+          <select name="legal_area" id="legal_area">
+            <option data-en="Select an area..." data-es="Selecciona un área...">Select an area...</option>
+            <option data-en="Immigration" data-es="Inmigración">Immigration</option>
+            <option data-en="Family law / Divorce" data-es="Derecho familiar / Divorcio">Family law / Divorce</option>
+            <option data-en="Work injury / Employment" data-es="Lesión laboral / Empleo">Work injury / Employment</option>
+            <option data-en="Real estate" data-es="Bienes raíces">Real estate</option>
+            <option data-en="Criminal defense" data-es="Defensa criminal">Criminal defense</option>
+            <option data-en="Business / Contracts" data-es="Negocios / Contratos">Business / Contracts</option>
+            <option data-en="Paralegal services" data-es="Servicios de paralegal">Paralegal services</option>
+            <option data-en="Other" data-es="Otro">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Package" data-es="Paquete">Package</label>
+          <select name="package" id="package">
+            <option data-en="Select a package..." data-es="Selecciona un paquete...">Select a package...</option>
+            <option>Basic — $80</option>
+            <option>Plus — $120</option>
+            <option data-en="Paralegal Connect — $100" data-es="Conexión Paralegal — $100">Paralegal Connect — $100</option>
+            <option data-en="Not sure yet" data-es="Aún no estoy seguro/a">Not sure yet</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-en="Tell us briefly about your situation" data-es="Cuéntanos brevemente tu situación">Tell us briefly about your situation</label>
+          <textarea name="message" id="message" placeholder="Describe what you need help with..."></textarea>
+        </div>
+        <div id="form-status" style="display:none; padding: 0.8rem 1rem; border-radius: 10px; font-size: 0.88rem; font-weight: 500; margin-bottom: 0.8rem; text-align: center;"></div>
+        <button class="form-submit" id="submit-btn" onclick="handleSubmit()" data-en="Send my request →" data-es="Enviar mi solicitud →">Send my request →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Clave <span>Connect</span></div>
+  <p data-en="Your key to the right attorney · Washington &amp; California" data-es="Tu clave para el abogado correcto · Washington y California">Your key to the right attorney · Washington &amp; California</p>
+  <p style="margin-top:0.8rem;" data-en="Clave Connect is a concierge and matching service — not a law firm. We do not provide legal advice. © 2026" data-es="Clave Connect es un servicio de concierge — no es una firma de abogados. No brindamos asesoría legal. © 2026">Clave Connect is a concierge and matching service — not a law firm. We do not provide legal advice. © 2026</p>
+</footer>
+
+<script>
+  let lang = 'en';
+
+  function toggleLang() {
+    lang = lang === 'en' ? 'es' : 'en';
+    document.getElementById('langBtn').textContent = lang === 'en' ? '🌐 Español' : '🌐 English';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const val = el.getAttribute('data-' + lang);
+      if (!val) return;
+      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = val;
+      else if (el.tagName === 'OPTION') el.textContent = val;
+      else el.innerHTML = val;
+    });
+  }
+
+  async function handleSubmit() {
+    const firstName = document.getElementById('first_name').value.trim();
+    const email    = document.getElementById('email').value.trim();
+
+    if (!firstName || !email) {
+      showStatus(
+        lang === 'en' ? 'Please fill in your name and email.' : 'Por favor ingresa tu nombre y correo.',
+        'error'
+      );
+      return;
+    }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = lang === 'en' ? 'Sending...' : 'Enviando...';
+
+    const data = {
+      access_key:  'ddf1ad2f-cb58-4f47-acd3-3c59881cdc11',
+      subject:     `Nueva solicitud de ${firstName} — Clave Connect`,
+      from_name:   'Clave Connect Website',
+      'Nombre':    firstName + ' ' + document.getElementById('last_name').value.trim(),
+      'Email':     email,
+      'Teléfono':  document.getElementById('phone').value.trim() || '—',
+      'Área legal':document.getElementById('legal_area').value,
+      'Paquete':   document.getElementById('package').value,
+      'Mensaje':   document.getElementById('message').value.trim() || '—'
+    };
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data)
+      });
+
+      const json = await res.json();
+      if (res.ok && json.success) {
+        showStatus(
+          lang === 'en' ? '✓ Thank you! We will contact you within 24 hours.' : '✓ ¡Gracias! Te contactaremos en menos de 24 horas.',
+          'success'
+        );
+        document.getElementById('first_name').value = '';
+        document.getElementById('last_name').value  = '';
+        document.getElementById('email').value      = '';
+        document.getElementById('phone').value      = '';
+        document.getElementById('legal_area').selectedIndex = 0;
+        document.getElementById('package').selectedIndex    = 0;
+        document.getElementById('message').value    = '';
+        btn.textContent = lang === 'en' ? 'Send my request →' : 'Enviar mi solicitud →';
+        btn.disabled = false;
+      } else {
+        throw new Error('HTTP ' + res.status);
+      }
+    } catch (e) {
+      console.error('Netlify form error:', e);
+      showStatus(
+        lang === 'en'
+          ? 'Something went wrong. Please email us at claveconnectwc@gmail.com'
+          : 'Algo salió mal. Escríbenos a claveconnectwc@gmail.com',
+        'error'
+      );
+      btn.textContent = lang === 'en' ? 'Send my request →' : 'Enviar mi solicitud →';
+      btn.disabled = false;
+    }
+  }
+
+  function showStatus(msg, type) {
+    const el = document.getElementById('form-status');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.style.background = type === 'success' ? 'rgba(72,199,142,0.15)' : 'rgba(255,100,100,0.15)';
+    el.style.color = type === 'success' ? '#48c78e' : '#ff6464';
+    el.style.border = type === 'success' ? '1px solid rgba(72,199,142,0.3)' : '1px solid rgba(255,100,100,0.3)';
+  }
+</script>
+</body>
+</html>
