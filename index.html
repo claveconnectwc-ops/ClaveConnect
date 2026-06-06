@@ -433,7 +433,7 @@ nav.scrolled .lang-sep{background:var(--border)}
       <span class="logo-wordmark">Clave<span>Connect</span></span>
     </a>
     <ul class="nav-links">
-      <li><a href="#who" class="nav-link">Who It's For</a></li>
+      <li><a href="#who" class="nav-link" data-i18n="nav-who">Who It's For</a></li>
       <li><a href="#how" class="nav-link" data-i18n="nav-how">How It Works</a></li>
       <li><a href="#pricing" class="nav-link" data-i18n="nav-pricing">Pricing</a></li>
       <li><a href="#faq" class="nav-link" data-i18n="nav-faq">FAQ</a></li>
@@ -449,11 +449,11 @@ nav.scrolled .lang-sep{background:var(--border)}
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#who" onclick="closeMobileMenu()">Who It's For</a>
-  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;">Check My Eligibility — $350</button>
+  <a href="#who" onclick="closeMobileMenu()" data-i18n="nav-who">Who It's For</a>
+  <a href="#how" onclick="closeMobileMenu()" data-i18n="nav-how">How It Works</a>
+  <a href="#pricing" onclick="closeMobileMenu()" data-i18n="nav-pricing">Pricing</a>
+  <a href="#faq" onclick="closeMobileMenu()" data-i18n="nav-faq">FAQ</a>
+  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;" data-i18n="mobile-cta">Check My Eligibility — $350</button>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -468,7 +468,7 @@ nav.scrolled .lang-sep{background:var(--border)}
       <p class="hero-sub" data-i18n="hero-sub">We help couples prepare their Adjustment of Status package step-by-step — in English or Spanish.</p>
       <div class="hero-ctas">
         <button class="btn btn-gold btn-lg" onclick="openModal()" data-i18n="hero-cta1">Check My Eligibility</button>
-        <a href="#how" class="btn btn-outline-white btn-lg">Learn More</a>
+        <a href="#how" class="btn btn-outline-white btn-lg" data-i18n="hero-cta2">Learn More</a>
       </div>
       <div class="hero-divider"></div>
       <div class="hero-meta">
@@ -535,34 +535,34 @@ nav.scrolled .lang-sep{background:var(--border)}
     <div class="who-header reveal">
       <div class="section-eyebrow" style="justify-content:center">
         <div class="eyebrow-line"></div>
-        <span class="eyebrow-text">Is This Right For You?</span>
+        <span class="eyebrow-text" data-i18n="who-eyebrow">Is This Right For You?</span>
       </div>
-      <h2 class="section-title" style="text-align:center">Clave Connect is designed for <strong>specific situations</strong></h2>
+      <h2 class="section-title" style="text-align:center" data-i18n="who-title">Clave Connect is designed for <strong>specific situations</strong></h2>
     </div>
     <div class="who-grid">
       <div class="who-card who-yes reveal d1">
         <div class="who-card-title">
           <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <h3>This service is for you if...</h3>
+          <h3 data-i18n="yes-col">This service is for you if...</h3>
         </div>
         <ul class="who-list">
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>You are married to a U.S. citizen</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>You entered the United States legally</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>You have no criminal history</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>You have no active removal proceedings</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>You want an affordable, organized alternative to a full-service attorney</li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="y1">You are married to a U.S. citizen</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="y2">You entered the United States legally</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="y3">You have no criminal history</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="y4">You have no active removal proceedings</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div><span data-i18n="y5">You want an affordable, organized alternative to a full-service attorney</span></li>
         </ul>
       </div>
       <div class="who-card who-no reveal d2">
         <div class="who-card-title">
           <div class="who-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg></div>
-          <h3>This service is NOT for you if...</h3>
+          <h3 data-i18n="no-col">This service is NOT for you if...</h3>
         </div>
         <ul class="who-list">
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>You have a deportation or removal order</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>You have a criminal record</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>There are prior immigration fraud concerns</li>
-          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div>Your immigration history is complex</li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div><span data-i18n="n1">You have a deportation or removal order</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div><span data-i18n="n2">You have a criminal record</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div><span data-i18n="n3">There are prior immigration fraud concerns</span></li>
+          <li><div class="who-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></div><span data-i18n="n4">Your immigration history is complex</span></li>
         </ul>
         <p style="font-size:.82rem;color:var(--text-muted);margin-top:20px;padding-top:16px;border-top:1px solid #fecaca;line-height:1.7;font-weight:300;">If your situation is complex, we can connect you with an independent licensed immigration attorney who can properly handle your case.</p>
       </div>
@@ -574,15 +574,15 @@ nav.scrolled .lang-sep{background:var(--border)}
 <section class="section how" id="how">
   <div class="container">
     <div class="how-header reveal">
-      <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">The Process</span></div>
-      <h2 class="section-title">Simple. Personal. <strong>Done right.</strong></h2>
-      <p class="section-sub">You explain your situation once — we take care of the organization and preparation so you can focus on what matters.</p>
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="how-eyebrow">The Process</span></div>
+      <h2 class="section-title" data-i18n="how-title">Simple. Personal. <strong>Done right.</strong></h2>
+      <p class="section-sub" data-i18n="how-sub">You explain your situation once — we take care of the organization and preparation so you can focus on what matters.</p>
     </div>
     <div class="steps reveal">
-      <div class="step d1"><div class="step-n">01</div><h3 class="step-h">Complete the guided questionnaire</h3><p class="step-p">Answer step-by-step questions about both spouses, your marriage history, and immigration background — in English or Spanish.</p></div>
-      <div class="step d2"><div class="step-n">02</div><h3 class="step-h">Upload your documents</h3><p class="step-p">Follow your personalized checklist to upload passports, marriage certificate, tax returns, and relationship evidence.</p></div>
-      <div class="step d3"><div class="step-n">03</div><h3 class="step-h">Receive your organized package</h3><p class="step-p">We prepare and organize your application packet with clear filing instructions — ready to review, sign, and submit.</p></div>
-      <div class="step d4"><div class="step-optional-tag">Optional</div><div class="step-n">04</div><h3 class="step-h">Consult an independent attorney</h3><p class="step-p">If your case needs legal review, we connect you with a licensed immigration attorney at a separately agreed fee.</p></div>
+      <div class="step d1"><div class="step-n">01</div><h3 class="step-h" data-i18n="step1-h">Complete the guided questionnaire</h3><p class="step-p" data-i18n="step1-p">Answer step-by-step questions about both spouses, your marriage history, and immigration background — in English or Spanish.</p></div>
+      <div class="step d2"><div class="step-n">02</div><h3 class="step-h" data-i18n="step2-h">Upload your documents</h3><p class="step-p" data-i18n="step2-p">Follow your personalized checklist to upload passports, marriage certificate, tax returns, and relationship evidence.</p></div>
+      <div class="step d3"><div class="step-n">03</div><h3 class="step-h" data-i18n="step3-h">Receive your organized package</h3><p class="step-p" data-i18n="step3-p">We prepare and organize your application packet with clear filing instructions — ready to review, sign, and submit.</p></div>
+      <div class="step d4"><div class="step-optional-tag" data-i18n="step4-opt">Optional</div><div class="step-n">04</div><h3 class="step-h" data-i18n="step4-h">Consult an independent attorney</h3><p class="step-p" data-i18n="step4-p">If your case needs legal review, we connect you with a licensed immigration attorney at a separately agreed fee.</p></div>
     </div>
   </div>
 </section>
@@ -591,43 +591,43 @@ nav.scrolled .lang-sep{background:var(--border)}
 <section class="section included" id="included">
   <div class="container included-layout">
     <div class="reveal">
-      <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text">What's Included</span></div>
-      <h2 class="section-title">Everything in your <strong>$350 package</strong></h2>
-      <p class="section-sub">Here is exactly what you receive — no surprises, no hidden steps.</p>
+      <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="incl-eyebrow">What's Included</span></div>
+      <h2 class="section-title" data-i18n="incl-title">Everything in your <strong>$350 package</strong></h2>
+      <p class="section-sub" data-i18n="incl-sub">Here is exactly what you receive — no surprises, no hidden steps.</p>
       <div class="included-note" style="margin-top:32px;">
-        <p>Forms covered: I-130, I-130A, I-485, I-864, I-765, and I-131. Designed for straightforward marriage-based cases only.</p>
+        <p data-i18n="incl-note">Forms covered: I-130, I-130A, I-485, I-864, I-765, and I-131. Designed for straightforward marriage-based cases only.</p>
       </div>
     </div>
     <div class="features-grid reveal d1">
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <h4>Intake Review</h4>
-        <p>Full guided questionnaire covering every detail needed for your AOS forms.</p>
+        <h4 data-i18n="feat1-h">Intake Review</h4>
+        <p data-i18n="feat1-p">Full guided questionnaire covering every detail needed for your AOS forms.</p>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
-        <h4>Evidence Checklist</h4>
-        <p>A personalized list of exactly what documents to gather based on your case.</p>
+        <h4 data-i18n="feat2-h">Evidence Checklist</h4>
+        <p data-i18n="feat2-p">A personalized list of exactly what documents to gather based on your case.</p>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h4>Prepared Forms</h4>
-        <p>Your application forms organized and prepared with the information you provided.</p>
+        <h4 data-i18n="feat3-h">Prepared Forms</h4>
+        <p data-i18n="feat3-p">Your application forms organized and prepared with the information you provided.</p>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/></svg></div>
-        <h4>Filing Instructions</h4>
-        <p>Step-by-step instructions so you know exactly what to sign, where to send it, and in what order.</p>
+        <h4 data-i18n="feat4-h">Filing Instructions</h4>
+        <p data-i18n="feat4-p">Step-by-step instructions so you know exactly what to sign, where to send it, and in what order.</p>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h4>Email & Text Support</h4>
-        <p>Direct support throughout the entire process — in English or Spanish.</p>
+        <h4 data-i18n="feat5-h">Email & Text Support</h4>
+        <p data-i18n="feat5-p">Direct support throughout the entire process — in English or Spanish.</p>
       </div>
       <div class="feat">
         <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-        <h4>Optional Attorney Consultation</h4>
-        <p>If you want legal review, we connect you with an independent licensed attorney.</p>
+        <h4 data-i18n="feat6-h">Optional Attorney Consultation</h4>
+        <p data-i18n="feat6-p">If you want legal review, we connect you with an independent licensed attorney.</p>
       </div>
     </div>
   </div>
@@ -639,32 +639,32 @@ nav.scrolled .lang-sep{background:var(--border)}
     <div class="timeline-header reveal">
       <div class="section-eyebrow" style="justify-content:center"><div class="eyebrow-line" style="background:rgba(196,162,74,.5)"></div><span class="eyebrow-text" data-i18n="after-eyebrow">After Purchase</span></div>
       <h2 class="section-title" data-i18n="after-title">What happens after you pay?</h2>
-      <p class="section-sub">Here is exactly what to expect — day by day.</p>
+      <p class="section-sub" data-i18n="after-sub">Here is exactly what to expect — day by day.</p>
     </div>
     <div class="timeline reveal">
       <div class="tl-item d1">
         <div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div class="tl-day">Day 1</div>
-        <div class="tl-title">You receive the intake questionnaire</div>
-        <div class="tl-desc">We send you access to your personalized guided questionnaire by email or text.</div>
+        <div class="tl-day" data-i18n="tl1-day">Day 1</div>
+        <div class="tl-title" data-i18n="tl1-title">You receive the intake questionnaire</div>
+        <div class="tl-desc" data-i18n="tl1-desc">We send you access to your personalized guided questionnaire by email or text.</div>
       </div>
       <div class="tl-item d2">
         <div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg></div>
-        <div class="tl-day">Days 2 – 3</div>
-        <div class="tl-title">You upload your documents</div>
-        <div class="tl-desc">Follow your personalized checklist and securely upload all required documents.</div>
+        <div class="tl-day" data-i18n="tl2-day">Days 2 – 3</div>
+        <div class="tl-title" data-i18n="tl2-title">You upload your documents</div>
+        <div class="tl-desc" data-i18n="tl2-desc">Follow your personalized checklist and securely upload all required documents.</div>
       </div>
       <div class="tl-item d3">
         <div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <div class="tl-day">Days 4 – 7</div>
-        <div class="tl-title">We prepare your package</div>
-        <div class="tl-desc">We organize your documents, complete the forms with your information, and review everything.</div>
+        <div class="tl-day" data-i18n="tl3-day">Days 4 – 7</div>
+        <div class="tl-title" data-i18n="tl3-title">We prepare your package</div>
+        <div class="tl-desc" data-i18n="tl3-desc">We organize your documents, complete the forms with your information, and review everything.</div>
       </div>
       <div class="tl-item d4">
         <div class="tl-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <div class="tl-day">Day 7+</div>
-        <div class="tl-title">You receive your filing package</div>
-        <div class="tl-desc">Your complete, organized application package with step-by-step filing instructions — ready to submit.</div>
+        <div class="tl-day" data-i18n="tl4-day">Day 7+</div>
+        <div class="tl-title" data-i18n="tl4-title">You receive your filing package</div>
+        <div class="tl-desc" data-i18n="tl4-desc">Your complete, organized application package with step-by-step filing instructions — ready to submit.</div>
       </div>
     </div>
   </div>
@@ -676,63 +676,63 @@ nav.scrolled .lang-sep{background:var(--border)}
     <div class="pricing-header reveal">
       <div class="section-eyebrow"><div class="eyebrow-line" style="background:rgba(196,162,74,.5)"></div><span class="eyebrow-text" data-i18n="pricing-eyebrow">Pricing</span></div>
       <h2 class="section-title" data-i18n="pricing-title">Transparent, one-time pricing</h2>
-      <p class="section-sub">No subscriptions. No hidden fees. Pay once — receive your complete package.</p>
+      <p class="section-sub" data-i18n="pricing-sub">No subscriptions. No hidden fees. Pay once — receive your complete package.</p>
     </div>
     <div class="pricing-cards">
       <div class="p-card p-card-main reveal d1">
-        <div class="p-badge">Most Popular</div>
-        <div class="p-name">Complete Package</div>
+        <div class="p-badge" data-i18n="p-badge">Most Popular</div>
+        <div class="p-name" data-i18n="p-name-main">Complete Package</div>
         <div class="p-price">$150 <span style="font-size:1.1rem;font-weight:400;color:var(--text-muted);text-decoration:line-through">$350</span></div>
-        <div class="p-period">Founding Client Rate · First 3 clients only</div>
+        <div class="p-period" data-i18n="p-period-main">Founding Client Rate · First 3 clients only</div>
         <div class="p-divider"></div>
         <ul class="p-list">
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Full guided intake questionnaire</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Personalized document checklist</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Case & evidence organization</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Application package preparation</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Step-by-step filing instructions</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Certified translations (up to 3 documents)</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Support & cover letters included</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Affidavit formatting support</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Email & text support throughout</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>English & Spanish</li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-1">Full guided intake questionnaire</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-2">Personalized document checklist</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-3">Case & evidence organization</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-4">Application package preparation</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-5">Step-by-step filing instructions</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-6">Certified translations (up to 3 documents)</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-7">Support & cover letters included</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-8">Affidavit formatting support</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-9">Email & text support throughout</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="p-li-10">English & Spanish</span></li>
         </ul>
-        <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:.95rem;padding:14px;" onclick="openModal()">Begin My Case</button>
-        <p class="p-note">Designed for straightforward marriage-based AOS cases. Complex situations may require attorney assistance. Certified translations are for USCIS submission purposes.</p>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:.95rem;padding:14px;" onclick="openModal()" data-i18n="p-btn">Begin My Case</button>
+        <p class="p-note" data-i18n="p-note">Designed for straightforward marriage-based AOS cases. Complex situations may require attorney assistance. Certified translations are for USCIS submission purposes.</p>
       </div>
       <div class="p-card p-card-alt reveal d2">
-        <div class="p-name">Attorney Consultation</div>
-        <div class="p-price">Add-on</div>
-        <div class="p-period">fee set by attorney</div>
+        <div class="p-name" data-i18n="p-name-alt">Attorney Consultation</div>
+        <div class="p-price" data-i18n="p-price-alt">Add-on</div>
+        <div class="p-period" data-i18n="p-period-alt">fee set by attorney</div>
         <div class="p-divider"></div>
         <ul class="p-list">
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Independent licensed attorney</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Complete case review</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Legal advice & guidance</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Recommended for complex cases</li>
-          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>Coordinated by Clave Connect</li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="pa-li-1">Independent licensed attorney</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="pa-li-2">Complete case review</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="pa-li-3">Legal advice & guidance</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="pa-li-4">Recommended for complex cases</span></li>
+          <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span><span data-i18n="pa-li-5">Coordinated by Clave Connect</span></li>
         </ul>
-        <a href="mailto:claveconnectwc@gmail.com?subject=Attorney%20Referral%20Request" class="btn" style="width:100%;justify-content:center;background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.15);font-size:.92rem;padding:14px;border-radius:6px;">Request a Referral</a>
-        <p class="p-note">Attorney fees are agreed upon directly between you and the attorney. Clave Connect does not charge a referral fee.</p>
+        <a href="mailto:claveconnectwc@gmail.com?subject=Attorney%20Referral%20Request" class="btn" style="width:100%;justify-content:center;background:rgba(255,255,255,.08);color:rgba(255,255,255,.75);border:1px solid rgba(255,255,255,.15);font-size:.92rem;padding:14px;border-radius:6px;" data-i18n="p-btn-alt">Request a Referral</a>
+        <p class="p-note" data-i18n="p-note-alt">Attorney fees are agreed upon directly between you and the attorney. Clave Connect does not charge a referral fee.</p>
       </div>
     </div>
 
     <!-- COMPARISON TABLE -->
     <div class="compare-wrap reveal">
-      <div class="compare-label">How do we compare?</div>
+      <div class="compare-label" data-i18n="compare-label">How do we compare?</div>
       <table class="compare-table">
         <thead>
           <tr>
             <th></th>
-            <th class="col-att">Traditional Attorney</th>
-            <th class="col-cc">Clave Connect</th>
+            <th class="col-att" data-i18n="compare-th-att">Traditional Attorney</th>
+            <th class="col-cc" data-i18n="compare-th-cc">Clave Connect</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Cost</td><td class="col-att">$4,000 – $6,000+</td><td class="col-cc"><strong>$150</strong> <span style="font-size:.75rem;text-decoration:line-through;opacity:.5">$350</span><br><span style="font-size:.72rem;opacity:.6">Founding rate</span></td></tr>
-          <tr><td>Type of service</td><td class="col-att">Full legal representation</td><td class="col-cc">Preparation support</td></tr>
-          <tr><td>Who handles the case</td><td class="col-att">Attorney handles everything</td><td class="col-cc">You stay in control</td></tr>
-          <tr><td>Best for</td><td class="col-att">Complex cases</td><td class="col-cc">Straightforward cases</td></tr>
+          <tr><td data-i18n="compare-r1">Cost</td><td class="col-att" data-i18n="compare-att-r1">$4,000 – $6,000+</td><td class="col-cc"><strong>$150</strong> <span style="font-size:.75rem;text-decoration:line-through;opacity:.5">$350</span><br><span style="font-size:.72rem;opacity:.6">Founding rate</span></td></tr>
+          <tr><td data-i18n="compare-r2">Type of service</td><td class="col-att" data-i18n="compare-att-r2">Full legal representation</td><td class="col-cc" data-i18n="compare-cc-r2">Preparation support</td></tr>
+          <tr><td data-i18n="compare-r3">Who handles the case</td><td class="col-att" data-i18n="compare-att-r3">Attorney handles everything</td><td class="col-cc" data-i18n="compare-cc-r3">You stay in control</td></tr>
+          <tr><td data-i18n="compare-r4">Best for</td><td class="col-att" data-i18n="compare-att-r4">Complex cases</td><td class="col-cc" data-i18n="compare-cc-r4">Straightforward cases</td></tr>
         </tbody>
       </table>
     </div>
@@ -744,15 +744,15 @@ nav.scrolled .lang-sep{background:var(--border)}
   <div class="container">
     <div class="story-inner reveal">
       <div class="section-eyebrow" style="justify-content:center;margin-bottom:28px"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="story-eyebrow">Why We Started This</span><div class="eyebrow-line"></div></div>
-      <p class="story-quote">"When we went through our own immigration process, we realized how <em>confusing and expensive</em> it could be — even for a straightforward case."</p>
+      <p class="story-quote" data-i18n="story-quote">"When we went through our own immigration process, we realized how <em>confusing and expensive</em> it could be — even for a straightforward case."</p>
       <p class="story-body">We spent hours trying to understand what documents to gather, which forms to fill out, and in what order to submit everything. We wished someone could just walk us through it, step by step, in plain language.<br><br>That's why we created Clave Connect — to help couples like us organize their cases with confidence, without paying attorney prices for paperwork support.</p>
       <div class="story-sig">
         <div class="story-avatar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="story-name">
-          <strong>The Clave Connect Team</strong>
-          <span>Document Preparation Specialists</span>
+          <strong data-i18n="story-name">The Clave Connect Team</strong>
+          <span data-i18n="story-role">Document Preparation Specialists</span>
         </div>
       </div>
     </div>
@@ -867,12 +867,12 @@ nav.scrolled .lang-sep{background:var(--border)}
 <section class="cta-section">
   <div class="container">
     <h2 class="reveal" data-i18n="cta-h2">Ready to start your <em>green card journey?</em></h2>
-    <p class="reveal d1">We'll respond within 24 hours and let you know if we're the right fit for your case.</p>
+    <p class="reveal d1" data-i18n="cta-p">We'll respond within 24 hours and let you know if we're the right fit for your case.</p>
     <div class="cta-btns reveal d2">
-      <button class="btn btn-gold btn-lg" onclick="openModal()">Begin My Case — $150</button>
-      <a href="mailto:claveconnectwc@gmail.com" class="btn btn-outline-white btn-lg">Send Us an Email</a>
+      <button class="btn btn-gold btn-lg" onclick="openModal()" data-i18n="cta-btn1">Begin My Case — $150</button>
+      <a href="mailto:claveconnectwc@gmail.com" class="btn btn-outline-white btn-lg" data-i18n="cta-btn2">Send Us an Email</a>
     </div>
-    <p class="cta-sub reveal d3">All 50 States &nbsp;&middot;&nbsp; English & Español &nbsp;&middot;&nbsp; Mon–Sat 9am–7pm</p>
+    <p class="cta-sub reveal d3" data-i18n="cta-sub">All 50 States &nbsp;&middot;&nbsp; English & Español &nbsp;&middot;&nbsp; Mon–Sat 9am–7pm</p>
   </div>
 </section>
 
@@ -898,7 +898,7 @@ nav.scrolled .lang-sep{background:var(--border)}
           <div class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#1a4731" stroke-width="2.5" stroke-linecap="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
           <span class="logo-wordmark" style="color:#fff">Clave<span>Connect</span></span>
         </a>
-        <p>Marriage-based Adjustment of Status preparation — in English and Spanish. Serving All 50 States.</p>
+        <p data-i18n="footer-desc">Marriage-based Adjustment of Status preparation — in English and Spanish. Serving All 50 States.</p>
       </div>
       <div class="footer-col">
         <h6>Service</h6>
@@ -1221,6 +1221,141 @@ function setLang(lang){
   const mt=document.getElementById('modalTitle');
   if(mt) mt.textContent=t['modal-title']||mt.textContent;
 }
+</script>
+<script>
+// ─── TRANSLATION PATCH (adds missing keys) ───
+Object.assign(TRANSLATIONS.en,{
+  'nav-who':"Who It's For",'mobile-cta':'Check My Eligibility — $350',
+  'hero-cta2':'Learn More',
+  'trust-conf':'Confidential & Secure','trust-resp':'Response within 24 hours','trust-support':'Text & Email Support',
+  'who-eyebrow':'Is This Right For You?',
+  'who-title':'Clave Connect is designed for <strong>specific situations</strong>',
+  'yes-col':'This service is for you if...','no-col':'This service is NOT for you if...',
+  'y1':'You are married to a U.S. citizen','y2':'You entered the United States legally',
+  'y3':'You have no criminal history','y4':'You have no active removal proceedings',
+  'y5':'You want an affordable, organized alternative to a full-service attorney',
+  'n1':'You have a deportation or removal order','n2':'You have a criminal record',
+  'n3':'There are prior immigration fraud concerns','n4':'Your immigration history is complex',
+  'who-no-note':'If your situation is complex, we can connect you with an independent licensed immigration attorney who can properly handle your case.',
+  'how-eyebrow':'The Process','how-title':'Simple. Personal. <strong>Done right.</strong>',
+  'how-sub':'You explain your situation once — we take care of the organization and preparation so you can focus on what matters.',
+  'step1-h':'Complete the guided questionnaire',
+  'step1-p':'Answer step-by-step questions about both spouses, your marriage history, and immigration background — in English or Spanish.',
+  'step2-h':'Upload your documents',
+  'step2-p':'Follow your personalized checklist to upload passports, marriage certificate, tax returns, and relationship evidence.',
+  'step3-h':'Receive your organized package',
+  'step3-p':'We prepare and organize your application packet with clear filing instructions — ready to review, sign, and submit.',
+  'step4-opt':'Optional','step4-h':'Consult an independent attorney',
+  'step4-p':'If your case needs legal review, we connect you with a licensed immigration attorney at a separately agreed fee.',
+  'incl-eyebrow':"What's Included",'incl-title':'Everything in your <strong>$350 package</strong>',
+  'incl-sub':'Here is exactly what you receive — no surprises, no hidden steps.',
+  'incl-note':'Forms covered: I-130, I-130A, I-485, I-864, I-765, and I-131. Designed for straightforward marriage-based cases only.',
+  'feat1-h':'Intake Review','feat1-p':'Full guided questionnaire covering every detail needed for your AOS forms.',
+  'feat2-h':'Evidence Checklist','feat2-p':'A personalized list of exactly what documents to gather based on your case.',
+  'feat3-h':'Prepared Forms','feat3-p':'Your application forms organized and prepared with the information you provided.',
+  'feat4-h':'Filing Instructions','feat4-p':'Step-by-step instructions so you know exactly what to sign, where to send it, and in what order.',
+  'feat5-h':'Email & Text Support','feat5-p':'Direct support throughout the entire process — in English or Spanish.',
+  'feat6-h':'Optional Attorney Consultation','feat6-p':'If you want legal review, we connect you with an independent licensed attorney.',
+  'after-sub':'Here is exactly what to expect — day by day.',
+  'tl1-day':'Day 1','tl1-title':'You receive the intake questionnaire','tl1-desc':'We send you access to your personalized guided questionnaire by email or text.',
+  'tl2-day':'Days 2 – 3','tl2-title':'You upload your documents','tl2-desc':'Follow your personalized checklist and securely upload all required documents.',
+  'tl3-day':'Days 4 – 7','tl3-title':'We prepare your package','tl3-desc':'We organize your documents, complete the forms with your information, and review everything.',
+  'tl4-day':'Day 7+','tl4-title':'You receive your filing package','tl4-desc':'Your complete, organized application package with step-by-step filing instructions — ready to submit.',
+  'pricing-sub':'No subscriptions. No hidden fees. Pay once — receive your complete package.',
+  'p-badge':'Most Popular','p-name-main':'Complete Package',
+  'p-period-main':'Founding Client Rate · First 3 clients only',
+  'p-li-1':'Full guided intake questionnaire','p-li-2':'Personalized document checklist',
+  'p-li-3':'Case & evidence organization','p-li-4':'Application package preparation',
+  'p-li-5':'Step-by-step filing instructions','p-li-6':'Certified translations (up to 3 documents)',
+  'p-li-7':'Support & cover letters included','p-li-8':'Affidavit formatting support',
+  'p-li-9':'Email & text support throughout','p-li-10':'English & Spanish',
+  'p-btn':'Begin My Case',
+  'p-note':'Designed for straightforward marriage-based AOS cases. Complex situations may require attorney assistance. Certified translations are for USCIS submission purposes.',
+  'p-name-alt':'Attorney Consultation','p-price-alt':'Add-on','p-period-alt':'fee set by attorney',
+  'pa-li-1':'Independent licensed attorney','pa-li-2':'Complete case review',
+  'pa-li-3':'Legal advice & guidance','pa-li-4':'Recommended for complex cases','pa-li-5':'Coordinated by Clave Connect',
+  'p-btn-alt':'Request a Referral',
+  'p-note-alt':'Attorney fees are agreed upon directly between you and the attorney. Clave Connect does not charge a referral fee.',
+  'compare-label':'How do we compare?',
+  'compare-th-att':'Traditional Attorney','compare-th-cc':'Clave Connect',
+  'compare-r1':'Cost','compare-att-r1':'$4,000 – $6,000+',
+  'compare-r2':'Type of service','compare-att-r2':'Full legal representation','compare-cc-r2':'Preparation support',
+  'compare-r3':'Who handles the case','compare-att-r3':'Attorney handles everything','compare-cc-r3':'You stay in control',
+  'compare-r4':'Best for','compare-att-r4':'Complex cases','compare-cc-r4':'Straightforward cases',
+  'story-quote':'"When we went through our own immigration process, we realized how <em>confusing and expensive</em> it could be — even for a straightforward case."',
+  'story-body':'We spent hours trying to understand what documents to gather, which forms to fill out, and in what order to submit everything. We wished someone could just walk us through it, step by step, in plain language.<br><br>That\'s why we created Clave Connect — to help couples like us organize their cases with confidence, without paying attorney prices for paperwork support.',
+  'story-name':'The Clave Connect Team','story-role':'Document Preparation Specialists',
+  'cta-p':"We'll respond within 24 hours and let you know if we're the right fit for your case.",
+  'cta-btn1':'Begin My Case — $150','cta-btn2':'Send Us an Email',
+  'cta-sub':'All 50 States &nbsp;&middot;&nbsp; English & Español &nbsp;&middot;&nbsp; Mon–Sat 9am–7pm',
+  'footer-desc':'Marriage-based Adjustment of Status preparation — in English and Spanish. Serving All 50 States.'
+});
+Object.assign(TRANSLATIONS.es,{
+  'nav-who':'Para Quién Es','mobile-cta':'Ver Si Califico — $350',
+  'hero-cta2':'Cómo Funciona',
+  'trust-conf':'Confidencial y Seguro','trust-resp':'Respuesta en 24 horas','trust-support':'Soporte por Texto y Correo',
+  'who-eyebrow':'¿Es Esto Para Ti?',
+  'who-title':'Clave Connect está diseñado para <strong>situaciones específicas</strong>',
+  'yes-col':'Este servicio es para ti si...','no-col':'Este servicio NO es para ti si...',
+  'y1':'Estás casado/a con un ciudadano/a estadounidense','y2':'Entraste a los Estados Unidos legalmente',
+  'y3':'No tienes antecedentes penales','y4':'No tienes órdenes de deportación activas',
+  'y5':'Quieres una alternativa accesible y organizada a un abogado completo',
+  'n1':'Tienes una orden de deportación o expulsión','n2':'Tienes antecedentes penales',
+  'n3':'Hay problemas previos de fraude migratorio','n4':'Tu historial migratorio es complejo',
+  'who-no-note':'Si tu situación es compleja, podemos conectarte con un abogado de inmigración independiente y licenciado que pueda manejar tu caso correctamente.',
+  'how-eyebrow':'El Proceso','how-title':'Simple. Personal. <strong>Hecho bien.</strong>',
+  'how-sub':'Explicas tu situación una vez — nosotros nos encargamos de la organización y preparación para que te concentres en lo que importa.',
+  'step1-h':'Completa el cuestionario guiado',
+  'step1-p':'Responde preguntas paso a paso sobre ambos cónyuges, tu historial matrimonial e inmigración — en inglés o español.',
+  'step2-h':'Sube tus documentos',
+  'step2-p':'Sigue tu lista personalizada para subir pasaportes, acta de matrimonio, declaraciones de impuestos y evidencia de relación.',
+  'step3-h':'Recibe tu paquete organizado',
+  'step3-p':'Preparamos y organizamos tu paquete de solicitud con instrucciones claras — listo para revisar, firmar y enviar.',
+  'step4-opt':'Opcional','step4-h':'Consulta con un abogado independiente',
+  'step4-p':'Si tu caso necesita revisión legal, te conectamos con un abogado de inmigración licenciado con una tarifa acordada por separado.',
+  'incl-eyebrow':'Qué Incluye','incl-title':'Todo en tu <strong>paquete de $350</strong>',
+  'incl-sub':'Esto es exactamente lo que recibes — sin sorpresas, sin pasos ocultos.',
+  'incl-note':'Formularios incluidos: I-130, I-130A, I-485, I-864, I-765 e I-131. Diseñado solo para casos sencillos de matrimonio.',
+  'feat1-h':'Revisión de Caso','feat1-p':'Cuestionario guiado completo con cada detalle necesario para tus formularios de AOS.',
+  'feat2-h':'Lista de Evidencia','feat2-p':'Una lista personalizada de exactamente qué documentos reunir según tu caso.',
+  'feat3-h':'Formularios Preparados','feat3-p':'Tus formularios organizados y preparados con la información que proporcionaste.',
+  'feat4-h':'Instrucciones de Envío','feat4-p':'Instrucciones paso a paso para saber exactamente qué firmar, dónde enviarlo y en qué orden.',
+  'feat5-h':'Soporte por Correo y Texto','feat5-p':'Apoyo directo durante todo el proceso — en inglés o español.',
+  'feat6-h':'Consulta con Abogado (Opcional)','feat6-p':'Si deseas revisión legal, te conectamos con un abogado de inmigración independiente y licenciado.',
+  'after-sub':'Exactamente qué esperar — día a día.',
+  'tl1-day':'Día 1','tl1-title':'Recibes el cuestionario de caso','tl1-desc':'Te enviamos acceso a tu cuestionario guiado personalizado por correo o texto.',
+  'tl2-day':'Días 2 – 3','tl2-title':'Subes tus documentos','tl2-desc':'Sigue tu lista personalizada y sube de forma segura todos los documentos requeridos.',
+  'tl3-day':'Días 4 – 7','tl3-title':'Preparamos tu paquete','tl3-desc':'Organizamos tus documentos, completamos los formularios con tu información y revisamos todo.',
+  'tl4-day':'Día 7+','tl4-title':'Recibes tu paquete de presentación','tl4-desc':'Tu paquete completo y organizado con instrucciones paso a paso — listo para enviar a USCIS.',
+  'pricing-sub':'Sin suscripciones. Sin costos ocultos. Pagas una vez — recibes tu paquete completo.',
+  'p-badge':'Más Popular','p-name-main':'Paquete Completo',
+  'p-period-main':'Tarifa de cliente fundador · Solo los primeros 3 clientes',
+  'p-li-1':'Cuestionario guiado de caso completo','p-li-2':'Lista de documentos personalizada',
+  'p-li-3':'Organización de caso y evidencia','p-li-4':'Preparación del paquete de solicitud',
+  'p-li-5':'Instrucciones de envío paso a paso','p-li-6':'Traducciones certificadas (hasta 3 documentos)',
+  'p-li-7':'Cartas de soporte y presentación incluidas','p-li-8':'Apoyo con formato de affidávit',
+  'p-li-9':'Soporte por correo y texto durante todo el proceso','p-li-10':'Inglés y Español',
+  'p-btn':'Comenzar Mi Caso',
+  'p-note':'Diseñado para casos de AOS por matrimonio sin complicaciones. Situaciones complejas pueden requerir asistencia de abogado. Las traducciones certificadas son para presentación ante USCIS.',
+  'p-name-alt':'Consulta con Abogado','p-price-alt':'Adicional','p-period-alt':'tarifa fijada por el abogado',
+  'pa-li-1':'Abogado licenciado independiente','pa-li-2':'Revisión completa del caso',
+  'pa-li-3':'Asesoría y orientación legal','pa-li-4':'Recomendado para casos complejos','pa-li-5':'Coordinado por Clave Connect',
+  'p-btn-alt':'Solicitar una Referencia',
+  'p-note-alt':'Los honorarios del abogado se acuerdan directamente entre tú y el abogado. Clave Connect no cobra tarifa de referencia.',
+  'compare-label':'¿Cómo nos comparamos?',
+  'compare-th-att':'Abogado Tradicional','compare-th-cc':'Clave Connect',
+  'compare-r1':'Costo','compare-att-r1':'$4,000 – $6,000+',
+  'compare-r2':'Tipo de servicio','compare-att-r2':'Representación legal completa','compare-cc-r2':'Apoyo en preparación',
+  'compare-r3':'Quién maneja el caso','compare-att-r3':'El abogado maneja todo','compare-cc-r3':'Tú mantienes el control',
+  'compare-r4':'Ideal para','compare-att-r4':'Casos complejos','compare-cc-r4':'Casos sencillos',
+  'story-quote':'"Cuando atravesamos nuestro propio proceso migratorio, nos dimos cuenta de lo <em>confuso y costoso</em> que puede ser — incluso para un caso sencillo."',
+  'story-body':'Pasamos horas tratando de entender qué documentos reunir, qué formularios llenar y en qué orden enviarlo todo. Deseábamos que alguien nos guiara paso a paso, en un lenguaje claro.<br><br>Por eso creamos Clave Connect — para ayudar a parejas como nosotros a organizar sus casos con confianza, sin pagar precios de abogado por apoyo con documentación.',
+  'story-name':'El Equipo de Clave Connect','story-role':'Especialistas en Preparación de Documentos',
+  'cta-p':'Respondemos dentro de 24 horas y te decimos si somos la opción adecuada para tu caso.',
+  'cta-btn1':'Comenzar Mi Caso — $150','cta-btn2':'Envíanos un Correo',
+  'cta-sub':'Todo EE.UU. &nbsp;&middot;&nbsp; English & Español &nbsp;&middot;&nbsp; Lun–Sáb 9am–7pm',
+  'footer-desc':'Preparación de Ajuste de Estatus por matrimonio — en inglés y en español. Atendemos clientes en todo el país.'
+});
 </script>
 </body>
 </html>
