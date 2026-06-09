@@ -108,6 +108,16 @@ nav.scrolled .hamburger span{background:var(--primary)}
 .hero-card-price-label{font-size:.75rem;color:rgba(255,255,255,.4);font-weight:500}
 .hero-card-price{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:600;color:var(--accent);line-height:1}
 .hero-card-price sup{font-size:1rem;vertical-align:super}
+.hero-price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.hero-price-old{font-size:1.25rem;color:rgba(255,255,255,.35);text-decoration:line-through;font-weight:400}
+.hero-price-new{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:600;color:var(--accent);line-height:1}
+.hero-price-new sup{font-size:1.4rem;vertical-align:super}
+.hero-price-tag{display:inline-block;background:rgba(196,162,74,.15);color:var(--accent);font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:26px}
+.hero-feat-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
+.hero-feat-list li{display:flex;align-items:center;gap:11px;font-size:.88rem;color:rgba(255,255,255,.75);font-weight:400}
+.hero-feat-list svg{color:var(--accent);flex-shrink:0;width:16px;height:16px}
+.hero-card-cta{width:100%;justify-content:center;margin-bottom:14px}
+.hero-urgency{font-size:.78rem;color:rgba(255,255,255,.4);text-align:center;font-weight:300;line-height:1.5}
 
 /* ─── TRUST STRIP ─── */
 .trust-strip{background:var(--bg-dark);border-top:1px solid rgba(255,255,255,.05);padding:20px 0}
@@ -155,7 +165,7 @@ nav.scrolled .hamburger span{background:var(--primary)}
 .how-header{text-align:center;margin-bottom:72px}
 .how-header .section-eyebrow{justify-content:center}
 .how-header .section-sub{margin:0 auto}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:2px}
 .step{background:var(--bg);padding:40px 32px;position:relative;transition:all .3s}
 .step:first-child{border-radius:12px 0 0 12px}
 .step:last-child{border-radius:0 12px 12px 0}
@@ -339,7 +349,7 @@ footer{background:var(--bg-dark);padding:60px 0 32px}
 /* ─── REVEAL ─── */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
 /* ─── RESPONSIVE ─── */
 @media(max-width:960px){
@@ -453,7 +463,7 @@ nav.scrolled .lang-sep{background:var(--border)}
   <a href="#how" onclick="closeMobileMenu()">How It Works</a>
   <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;">Check My Eligibility — $350</button>
+  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;" data-i18n="mobile-cta">Start Your Eligibility Check — $350</button>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -488,31 +498,20 @@ nav.scrolled .lang-sep{background:var(--border)}
     </div>
     <div class="hero-card-wrap reveal">
       <div class="hero-card">
-        <div class="hero-card-label">Your AOS Package Status</div>
-        <div class="hero-step">
-          <div class="step-dot done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <span class="step-text done">Eligibility check complete</span>
+        <div class="hero-card-label" data-i18n="hero-card-label">Marriage Green Card Package</div>
+        <div class="hero-price-row">
+          <span class="hero-price-old">$499</span>
+          <span class="hero-price-new"><sup>$</sup>350</span>
         </div>
-        <div class="hero-step">
-          <div class="step-dot done"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></div>
-          <span class="step-text done">Guided questionnaire</span>
-        </div>
-        <div class="hero-step">
-          <div class="step-dot active"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4" fill="currentColor"/></svg></div>
-          <span class="step-text active">Document checklist ready</span>
-        </div>
-        <div class="hero-step">
-          <div class="step-dot pending"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-          <span class="step-text pending">Package preparation</span>
-        </div>
-        <div class="hero-step">
-          <div class="step-dot pending"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72"/></svg></div>
-          <span class="step-text pending">Filing instructions delivered</span>
-        </div>
-        <div class="hero-card-footer">
-          <span class="hero-card-price-label">Complete Package</span>
-          <span class="hero-card-price"><sup>$</sup>350</span>
-        </div>
+        <div class="hero-price-tag" data-i18n="hero-price-tag">Limited-Time Offer</div>
+        <ul class="hero-feat-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat1">USCIS Forms Preparation</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat2">Personalized Document Checklist</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat3">English & Spanish Support</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat4">Serving All 50 States</span></li>
+        </ul>
+        <button class="btn btn-gold btn-lg hero-card-cta" onclick="openModal()" data-i18n="hero-card-cta">Start Eligibility Check</button>
+        <p class="hero-urgency" data-i18n="hero-urgency">Currently accepting a limited number of new clients.</p>
       </div>
     </div>
   </div>
@@ -579,10 +578,11 @@ nav.scrolled .lang-sep{background:var(--border)}
       <p class="section-sub">You explain your situation once — we take care of the organization and preparation so you can focus on what matters.</p>
     </div>
     <div class="steps reveal">
-      <div class="step d1"><div class="step-n">01</div><h3 class="step-h">Complete the guided questionnaire</h3><p class="step-p">Answer step-by-step questions about both spouses, your marriage history, and immigration background — in English or Spanish.</p></div>
-      <div class="step d2"><div class="step-n">02</div><h3 class="step-h">Upload your documents</h3><p class="step-p">Follow your personalized checklist to upload passports, marriage certificate, tax returns, and relationship evidence.</p></div>
-      <div class="step d3"><div class="step-n">03</div><h3 class="step-h">Receive your organized package</h3><p class="step-p">We prepare and organize your application packet with clear filing instructions — ready to review, sign, and submit.</p></div>
-      <div class="step d4"><div class="step-optional-tag">Optional</div><div class="step-n">04</div><h3 class="step-h">Consult an independent attorney</h3><p class="step-p">If your case needs legal review, we connect you with a licensed immigration attorney at a separately agreed fee.</p></div>
+      <div class="step d1"><div class="step-n">01</div><h3 class="step-h" data-i18n="s1-title">Complete the Eligibility Check</h3><p class="step-p" data-i18n="s1-desc">Answer a few quick questions so we can confirm your case is a good fit for our service.</p></div>
+      <div class="step d2"><div class="step-n">02</div><h3 class="step-h" data-i18n="s2-title">Secure Your Service</h3><p class="step-p" data-i18n="s2-desc">Reserve your spot with a simple, secure one-time payment.</p></div>
+      <div class="step d3"><div class="step-n">03</div><h3 class="step-h" data-i18n="s3-title">Receive Your Client Intake</h3><p class="step-p" data-i18n="s3-desc">We send your personalized intake questionnaire by email or text — in English or Spanish.</p></div>
+      <div class="step d4"><div class="step-n">04</div><h3 class="step-h" data-i18n="s4-title">Upload Documents</h3><p class="step-p" data-i18n="s4-desc">Follow your personalized checklist to securely upload everything we need.</p></div>
+      <div class="step d5"><div class="step-n">05</div><h3 class="step-h" data-i18n="s5-title">We Prepare Your Package</h3><p class="step-p" data-i18n="s5-desc">We organize, complete, and review your application — ready to sign and mail.</p></div>
     </div>
   </div>
 </section>
@@ -698,6 +698,7 @@ nav.scrolled .lang-sep{background:var(--border)}
           <li><span class="p-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg></span>English & Spanish</li>
         </ul>
         <button class="btn btn-gold" style="width:100%;justify-content:center;font-size:.95rem;padding:14px;" onclick="openModal()">Begin My Case</button>
+        <p style="font-size:.75rem;color:var(--text-muted);text-align:center;margin-top:10px" data-i18n="pricing-urgency">Currently accepting a limited number of new clients.</p>
         <p class="p-note">Designed for straightforward marriage-based AOS cases. Complex situations may require attorney assistance. Certified translations are for USCIS submission purposes.</p>
       </div>
       <div class="p-card p-card-alt reveal d2">
@@ -743,16 +744,15 @@ nav.scrolled .lang-sep{background:var(--border)}
 <section class="story">
   <div class="container">
     <div class="story-inner reveal">
-      <div class="section-eyebrow" style="justify-content:center;margin-bottom:28px"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="story-eyebrow">Why We Started This</span><div class="eyebrow-line"></div></div>
-      <p class="story-quote">"When we went through our own immigration process, we realized how <em>confusing and expensive</em> it could be — even for a straightforward case."</p>
-      <p class="story-body">We spent hours trying to understand what documents to gather, which forms to fill out, and in what order to submit everything. We wished someone could just walk us through it, step by step, in plain language.<br><br>That's why we created Clave Connect — to help couples like us organize their cases with confidence, without paying attorney prices for paperwork support.</p>
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:28px"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="story-eyebrow">Why Clave Connect?</span><div class="eyebrow-line"></div></div>
+      <p class="story-body" data-i18n="story-body" style="font-size:1.05rem">We personally went through the marriage-based Green Card process and understand how overwhelming it can feel.<br><br>That's why we created Clave Connect — to help couples like you organize your documents and prepare your package with confidence.</p>
       <div class="story-sig">
         <div class="story-avatar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="story-name">
-          <strong>The Clave Connect Team</strong>
-          <span>Document Preparation Specialists</span>
+          <strong data-i18n="story-name">Deyla</strong>
+          <span data-i18n="story-role">Founder, Clave Connect</span>
         </div>
       </div>
     </div>
@@ -849,7 +849,7 @@ nav.scrolled .lang-sep{background:var(--border)}
         <div class="section-eyebrow"><div class="eyebrow-line"></div><span class="eyebrow-text" data-i18n="faq-eyebrow">FAQ</span></div>
         <h2 class="section-title" data-i18n="faq-title">Common questions</h2>
         <p class="section-sub" data-i18n="faq-sub">Everything you need to know before getting started.</p>
-        <div style="margin-top:32px"><a href="mailto:claveconnectwc@gmail.com" class="btn btn-dark">Contact Us</a></div>
+        <div style="margin-top:32px"><button class="btn btn-dark" onclick="openModal()" data-i18n="faq-cta">Start Your Eligibility Check</button></div>
       </div>
       <div class="faq-list reveal d1">
         <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q-text">Is Clave Connect a law firm?</span><div class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div></button><div class="faq-answer"><p>No. Clave Connect is a document preparation and organization service — not a law firm. We do not provide legal advice, represent clients before USCIS, or practice immigration law in any form.</p></div></div>
@@ -872,6 +872,7 @@ nav.scrolled .lang-sep{background:var(--border)}
       <button class="btn btn-gold btn-lg" onclick="openModal()">Begin My Case — $350</button>
       <a href="mailto:claveconnectwc@gmail.com" class="btn btn-outline-white btn-lg">Send Us an Email</a>
     </div>
+    <p class="cta-sub reveal d3" data-i18n="cta-urgency" style="margin-top:18px;color:var(--accent-lite);font-weight:500">Currently accepting a limited number of new clients.</p>
     <p class="cta-sub reveal d3">All 50 States &nbsp;&middot;&nbsp; English & Español &nbsp;&middot;&nbsp; Mon–Sat 9am–7pm</p>
   </div>
 </section>
@@ -1145,70 +1146,90 @@ const TRANSLATIONS = {
   en: {
     'announce': '<strong>Limited Introductory Rate:</strong> $350 <span style="text-decoration:line-through;opacity:.7">$499</span> — Save $149 today.',
     'nav-how': 'How It Works', 'nav-includes': "What's Included", 'nav-pricing': 'Pricing', 'nav-faq': 'FAQ',
-    'nav-cta': 'Check My Eligibility',
+    'nav-cta': 'Start Eligibility Check',
     'hero-eyebrow': 'Marriage-Based Adjustment of Status',
     'hero-h1': 'Get Your Marriage Green Card <em>Without the Confusion</em>',
     'hero-sub': 'We prepare your complete Adjustment of Status package — forms, documents, and final review — in English or Spanish.',
-    'hero-cta1': 'Check My Eligibility', 'hero-cta2': 'How It Works',
+    'hero-cta1': 'Start Your Eligibility Check', 'hero-cta2': 'How It Works',
+    'hero-card-label': 'Marriage Green Card Package', 'hero-price-tag': 'Limited-Time Offer',
+    'hero-feat1': 'USCIS Forms Preparation', 'hero-feat2': 'Personalized Document Checklist',
+    'hero-feat3': 'English & Spanish Support', 'hero-feat4': 'Serving All 50 States',
+    'hero-card-cta': 'Start Eligibility Check', 'hero-urgency': 'Currently accepting a limited number of new clients.',
+    'mobile-cta': 'Start Your Eligibility Check — $350',
     'trust1': 'English & Español', 'trust2': 'No hidden fees', 'trust3': '100% remote', 'trust4': 'All 50 States',
     'who-eyebrow': 'Who This Is For', 'who-title': 'Is this right for your case?',
     'yes-col': 'This is for you if:', 'no-col': 'This is NOT for you if:',
     'y1':'You are married to a U.S. citizen','y2':'You are physically present in the U.S.','y3':'Your entry was lawful (visa, parole, or similar)','y4':'No prior deportations or serious criminal history','y5':'You want an organized, guided process',
     'n1':'Your spouse is a green card holder (LPR), not a citizen','n2':'You have a prior deportation or removal order','n3':'You entered without inspection (EWI) and have no parole','n4':'You have criminal convictions beyond minor traffic violations','n5':'Your case involves complex legal issues',
     'how-eyebrow': 'Process', 'how-title': 'How It Works', 'how-sub': 'From screening to your complete filing package — step by step.',
-    's1-title': 'Eligibility Check', 's1-desc': 'Answer 6 quick yes/no questions to confirm your case qualifies.',
-    's2-title': 'Intake Questionnaire', 's2-desc': 'Complete our guided questionnaire — we walk you through every question.',
-    's3-title': 'Document Checklist', 's3-desc': 'Receive your personalized list of every document you need to gather.',
-    's4-title': 'Package Preparation', 's4-desc': 'We organize and complete all required USCIS forms with your information.',
-    's5-title': 'Final Review', 's5-desc': 'We review everything together before you mail your package to USCIS.',
+    's1-title': 'Complete the Eligibility Check', 's1-desc': 'Answer a few quick questions so we can confirm your case is a good fit for our service.',
+    's2-title': 'Secure Your Service', 's2-desc': 'Reserve your spot with a simple, secure one-time payment.',
+    's3-title': 'Receive Your Client Intake', 's3-desc': 'We send your personalized intake questionnaire by email or text — in English or Spanish.',
+    's4-title': 'Upload Documents', 's4-desc': 'Follow your personalized checklist to securely upload everything we need.',
+    's5-title': 'We Prepare Your Package', 's5-desc': 'We organize, complete, and review your application — ready to sign and mail.',
     'feat-eyebrow': "What's Included", 'feat-title': 'Everything in one package',
     'after-eyebrow': 'After Purchase', 'after-title': 'What happens after you pay?', 'after-sub': 'Here is exactly what to expect — day by day.',
     'pricing-eyebrow': 'Pricing', 'pricing-title': 'Transparent, one-time pricing', 'pricing-sub': 'No subscriptions. No hidden fees. Pay once — receive your complete package.',
-    'story-eyebrow': 'Why We Started This',
+    'pricing-urgency': 'Currently accepting a limited number of new clients.',
+    'story-eyebrow': 'Why Clave Connect?',
+    'story-body': "We personally went through the marriage-based Green Card process and understand how overwhelming it can feel.<br><br>That's why we created Clave Connect — to help couples like you organize your documents and prepare your package with confidence.",
+    'story-name': 'Deyla', 'story-role': 'Founder, Clave Connect',
     'test-eyebrow': 'Client Stories', 'test-title': "People We've Helped", 'test-sub': 'Real stories from couples who went through the process with Clave Connect.',
     'test1-text': '"I was terrified of making a mistake on the forms and delaying my husband\u2019s case. Clave Connect walked me through everything step by step, in Spanish. I never felt alone in the process."',
     'test2-text': '"I didn\u2019t want to pay $5,000 for an attorney when my case was straightforward. Clave Connect gave me the same organized, thorough result for a fraction of the price. Completely worth it."',
     'test3-text': '"My husband is American and neither of us knew where to start. Clave Connect responded to every question quickly and made sure we never felt confused. The bilingual support made a huge difference."',
     'test4-text': '"What impressed me most was how organized everything was. I received a clear checklist, the forms were filled out correctly, and the instructions for mailing were detailed. I felt confident the day I sent my package."',
     'faq-eyebrow': 'FAQ', 'faq-title': 'Common questions', 'faq-sub': 'Everything you need to know before getting started.',
+    'faq-cta': 'Start Your Eligibility Check',
     'cta-h2': 'Ready to start your <em>green card journey?</em>',
     'cta-p': "We'll respond within 24 hours and let you know if we're the right fit for your case.",
     'cta-btn1': 'Begin My Case — $350', 'cta-btn2': 'Send Us an Email',
+    'cta-urgency': 'Currently accepting a limited number of new clients.',
     'footer-desc': 'Marriage-based Adjustment of Status preparation — in English and Spanish. Serving All 50 States.',
     'modal-title': 'Is Clave Connect right for your case?'
   },
   es: {
     'announce': '<strong>Tarifa Introductoria:</strong> $350 <span style="text-decoration:line-through;opacity:.7">$499</span> — Ahorra $149 hoy.',
     'nav-how': 'Cómo Funciona', 'nav-includes': 'Qué Incluye', 'nav-pricing': 'Precios', 'nav-faq': 'Preguntas',
-    'nav-cta': 'Ver Si Califico',
+    'nav-cta': 'Verificar Elegibilidad',
     'hero-eyebrow': 'Ajuste de Estatus por Matrimonio',
     'hero-h1': 'Obtén Tu Green Card por Matrimonio <em>Sin la Confusión</em>',
     'hero-sub': 'Preparamos tu paquete completo de Ajuste de Estatus — formularios, documentos y revisión final — en inglés o en español.',
-    'hero-cta1': 'Ver Si Califico', 'hero-cta2': 'Cómo Funciona',
+    'hero-cta1': 'Comenzar Verificación de Elegibilidad', 'hero-cta2': 'Cómo Funciona',
+    'hero-card-label': 'Paquete de Green Card por Matrimonio', 'hero-price-tag': 'Oferta por Tiempo Limitado',
+    'hero-feat1': 'Preparación de Formularios USCIS', 'hero-feat2': 'Lista Personalizada de Documentos',
+    'hero-feat3': 'Soporte en Inglés y Español', 'hero-feat4': 'Servicio en Los 50 Estados',
+    'hero-card-cta': 'Iniciar Verificación de Elegibilidad', 'hero-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
+    'mobile-cta': 'Comenzar Verificación de Elegibilidad — $350',
     'trust1': 'English & Español', 'trust2': 'Sin costos ocultos', 'trust3': '100% remoto', 'trust4': 'Todo EE.UU.',
     'who-eyebrow': 'Para Quién Es', 'who-title': '¿Es esto adecuado para tu caso?',
     'yes-col': 'Esto es para ti si:', 'no-col': 'Esto NO es para ti si:',
     'y1':'Estás casado/a con un ciudadano/a estadounidense','y2':'Estás presente físicamente en los EE.UU.','y3':'Tu entrada fue legal (visa, parole u otro)','y4':'Sin deportaciones previas ni antecedentes penales graves','y5':'Quieres un proceso organizado y guiado',
     'n1':'Tu cónyuge tiene residencia (green card), no ciudadanía','n2':'Tienes una orden de deportación o expulsión previa','n3':'Entraste sin inspección (EWI) y no tienes parole','n4':'Tienes condenas penales más allá de infracciones de tráfico','n5':'Tu caso tiene complicaciones legales complejas',
     'how-eyebrow': 'El Proceso', 'how-title': 'Cómo Funciona', 'how-sub': 'Desde la verificación hasta tu paquete completo de solicitud — paso a paso.',
-    's1-title': 'Verificación de Elegibilidad', 's1-desc': 'Responde 6 preguntas rápidas de sí/no para confirmar que tu caso califica.',
-    's2-title': 'Cuestionario de Caso', 's2-desc': 'Completa nuestro cuestionario guiado — te explicamos cada pregunta.',
-    's3-title': 'Lista de Documentos', 's3-desc': 'Recibe tu lista personalizada de todos los documentos que necesitas reunir.',
-    's4-title': 'Preparación del Paquete', 's4-desc': 'Organizamos y completamos todos los formularios de USCIS requeridos con tu información.',
-    's5-title': 'Revisión Final', 's5-desc': 'Revisamos todo juntos antes de que envíes tu paquete a USCIS.',
+    's1-title': 'Completa la Verificación de Elegibilidad', 's1-desc': 'Responde algunas preguntas rápidas para confirmar que tu caso es adecuado para nuestro servicio.',
+    's2-title': 'Asegura Tu Servicio', 's2-desc': 'Reserva tu lugar con un pago único, simple y seguro.',
+    's3-title': 'Recibe Tu Cuestionario de Caso', 's3-desc': 'Te enviamos tu cuestionario personalizado por correo o mensaje de texto — en inglés o español.',
+    's4-title': 'Sube Tus Documentos', 's4-desc': 'Sigue tu lista personalizada para subir todo lo que necesitamos de forma segura.',
+    's5-title': 'Preparamos Tu Paquete', 's5-desc': 'Organizamos, completamos y revisamos tu solicitud — lista para firmar y enviar.',
     'feat-eyebrow': 'Qué Incluye', 'feat-title': 'Todo en un solo paquete',
     'after-eyebrow': 'Después de Pagar', 'after-title': '¿Qué pasa después de pagar?', 'after-sub': 'Exactamente qué esperar — día a día.',
     'pricing-eyebrow': 'Precios', 'pricing-title': 'Precio transparente, un solo pago', 'pricing-sub': 'Sin suscripciones. Sin costos ocultos. Pagas una vez — recibes tu paquete completo.',
-    'story-eyebrow': 'Por Qué Empezamos',
+    'pricing-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
+    'story-eyebrow': '¿Por Qué Clave Connect?',
+    'story-body': 'Nosotros mismos pasamos por el proceso de Green Card por matrimonio y entendemos lo abrumador que puede sentirse.<br><br>Por eso creamos Clave Connect — para ayudarte a organizar tus documentos y preparar tu paquete con confianza.',
+    'story-name': 'Deyla', 'story-role': 'Fundadora, Clave Connect',
     'test-eyebrow': 'Historias de Clientes', 'test-title': 'Personas Que Hemos Ayudado', 'test-sub': 'Historias reales de parejas que pasaron por el proceso con Clave Connect.',
     'test1-text': '"Tenía miedo de cometer un error en los formularios y retrasar el caso de mi esposo. Clave Connect me guió paso a paso, en español. Nunca me sentí sola en el proceso."',
     'test2-text': '"No quería pagar $5,000 por un abogado cuando mi caso era sencillo. Clave Connect me dio el mismo resultado organizado y completo por una fracción del precio. Totalmente lo vale."',
     'test3-text': '"Mi esposo es americano y ninguno de los dos sabía por dónde empezar. Clave Connect respondía cada pregunta rápidamente y se aseguró de que nunca nos sintiéramos confundidos. El apoyo bilingüe marcó una gran diferencia."',
     'test4-text': '"Lo que más me impresionó fue lo organizado que estaba todo. Recibí una lista clara, los formularios estaban bien llenados y las instrucciones para enviar por correo eran detalladas. Me sentí seguro el día que mandé mi paquete."',
     'faq-eyebrow': 'Preguntas Frecuentes', 'faq-title': 'Preguntas comunes', 'faq-sub': 'Todo lo que necesitas saber antes de comenzar.',
+    'faq-cta': 'Comenzar Verificación de Elegibilidad',
     'cta-h2': '¿Listo/a para comenzar tu <em>camino al green card?</em>',
     'cta-p': 'Respondemos dentro de 24 horas y te decimos si somos la opción adecuada para tu caso.',
     'cta-btn1': 'Comenzar Mi Caso — $350', 'cta-btn2': 'Envíanos un Correo',
+    'cta-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
     'footer-desc': 'Preparación de Ajuste de Estatus por matrimonio — en inglés y en español. Atendemos clientes en todo el país.',
     'modal-title': '¿Es Clave Connect adecuado para tu caso?'
   }
