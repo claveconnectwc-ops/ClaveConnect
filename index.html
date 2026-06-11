@@ -44,8 +44,8 @@ nav{position:fixed;top:36px;left:0;right:0;z-index:100;padding:18px 0;transition
 nav.scrolled{top:0;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:14px 0;box-shadow:0 1px 24px rgba(0,0,0,.07)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.logo-mark{width:38px;height:38px;background:var(--accent);border-radius:10px;display:flex;align-items:center;justify-content:center}
-.logo-mark svg{width:20px;height:20px}
+.logo-mark{height:40px;display:flex;align-items:center;justify-content:center}
+.logo-mark img{height:40px;width:auto;display:block}
 .logo-wordmark{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:600;letter-spacing:.2px;transition:color .3s}
 nav:not(.scrolled) .logo-wordmark{color:#fff}
 nav.scrolled .logo-wordmark{color:var(--primary)}
@@ -449,9 +449,7 @@ nav.scrolled .lang-sep{background:var(--border)}
   <div class="container nav-inner">
     <a href="#" class="logo">
       <div class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#0b1d35" stroke-width="2.5" stroke-linecap="round">
-          <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/>
-        </svg>
+        <img src="apple-touch-icon.png" alt="Clave Connect logo">
       </div>
       <span class="logo-wordmark">Clave<span>Connect</span></span>
     </a>
@@ -744,8 +742,8 @@ nav.scrolled .lang-sep{background:var(--border)}
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
         <div class="story-name">
-          <strong data-i18n="story-name">Deyla</strong>
-          <span data-i18n="story-role">Founder, Clave Connect</span>
+          <strong data-i18n="story-name">Deyla & William Kirby</strong>
+          <span data-i18n="story-role">Founders, Clave Connect</span>
         </div>
       </div>
     </div>
@@ -1085,7 +1083,7 @@ const TRANSLATIONS = {
     'pricing-urgency': 'Currently accepting a limited number of new clients.',
     'story-eyebrow': 'Why Clave Connect?',
     'story-body': "We personally went through the marriage-based Green Card process and understand how overwhelming it can feel.<br><br>That's why we created Clave Connect — to help couples like you organize your documents and prepare your package with confidence.",
-    'story-name': 'Deyla', 'story-role': 'Founder, Clave Connect',
+    'story-name': 'Deyla & William Kirby', 'story-role': 'Founders, Clave Connect',
     'test-eyebrow': 'Client Stories', 'test-title': "People We've Helped", 'test-sub': 'Real stories from couples who went through the process with Clave Connect.',
     'test1-text': '"I was terrified of making a mistake on the forms and delaying my husband\u2019s case. Clave Connect walked me through everything step by step, in Spanish. I never felt alone in the process."',
     'test2-text': '"I didn\u2019t want to pay $5,000 for an attorney when my case was straightforward. Clave Connect gave me the same organized, thorough result for a fraction of the price. Completely worth it."',
@@ -1130,7 +1128,7 @@ const TRANSLATIONS = {
     'pricing-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
     'story-eyebrow': '¿Por Qué Clave Connect?',
     'story-body': 'Nosotros mismos pasamos por el proceso de Green Card por matrimonio y entendemos lo abrumador que puede sentirse.<br><br>Por eso creamos Clave Connect — para ayudarte a organizar tus documentos y preparar tu paquete con confianza.',
-    'story-name': 'Deyla', 'story-role': 'Fundadora, Clave Connect',
+    'story-name': 'Deyla & William Kirby', 'story-role': 'Fundadores, Clave Connect',
     'test-eyebrow': 'Historias de Clientes', 'test-title': 'Personas Que Hemos Ayudado', 'test-sub': 'Historias reales de parejas que pasaron por el proceso con Clave Connect.',
     'test1-text': '"Tenía miedo de cometer un error en los formularios y retrasar el caso de mi esposo. Clave Connect me guió paso a paso, en español. Nunca me sentí sola en el proceso."',
     'test2-text': '"No quería pagar $5,000 por un abogado cuando mi caso era sencillo. Clave Connect me dio el mismo resultado organizado y completo por una fracción del precio. Totalmente lo vale."',
