@@ -70,10 +70,20 @@ nav.scrolled .nav-link:hover{color:var(--primary)}
 .hamburger span{display:block;width:22px;height:2px;border-radius:2px;transition:background .3s}
 nav:not(.scrolled) .hamburger span{background:rgba(255,255,255,.9)}
 nav.scrolled .hamburger span{background:var(--primary)}
-.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:20px 28px;box-shadow:0 8px 32px rgba(0,0,0,.1)}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;z-index:200;background:var(--bg);border-bottom:1px solid var(--border);padding:20px 28px;box-shadow:0 8px 32px rgba(0,0,0,.1);overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:13px 0;text-decoration:none;font-size:.95rem;font-weight:500;color:var(--text);border-bottom:1px solid var(--border)}
 .mobile-menu .btn{width:100%;justify-content:center;margin-top:16px}
+.mobile-menu .lang-toggle{margin:16px 0 0;border-color:var(--border);justify-content:center}
+.mobile-menu .lang-toggle .lang-btn{color:var(--text-muted)}
+.mobile-menu .lang-toggle .lang-btn.active{background:var(--accent-pale);color:var(--primary)}
+body.menu-open{overflow:hidden}
+
+/* ─── NEXT-STEPS LIST ─── */
+.sm-next-list{list-style:none;padding:0;margin:0}
+.sm-next-item{display:flex;align-items:flex-start;gap:10px;padding:6px 0}
+.sm-next-num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:var(--primary);color:#fff;font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.sm-next-txt{font-size:.78rem;color:var(--text-mid);line-height:1.5}
 
 /* ─── HERO ─── */
 .hero{background:var(--hero-grad);padding:180px 0 110px;position:relative;overflow:hidden}
@@ -373,6 +383,9 @@ footer{background:var(--bg-dark);padding:60px 0 32px}
   .who-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
+  .nav-inner>.btn-gold{display:none}
+  .logo-wordmark{font-size:1.1rem}
+  .lang-toggle{margin-left:4px}
   .container{padding:0 20px}.section{padding:72px 0}
   .features-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr;border-radius:12px;overflow:hidden}
@@ -471,10 +484,15 @@ nav.scrolled .lang-sep{background:var(--border)}
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#who" onclick="closeMobileMenu()">Who It's For</a>
-  <a href="#how" onclick="closeMobileMenu()">How It Works</a>
-  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
-  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;" data-i18n="mobile-cta">Start Your Eligibility Check — $350</button>
+  <a href="#how" onclick="closeMobileMenu()" data-i18n="nav-how">How It Works</a>
+  <a href="#pricing" onclick="closeMobileMenu()" data-i18n="nav-pricing">Pricing</a>
+  <a href="#faq" onclick="closeMobileMenu()" data-i18n="nav-faq">FAQ</a>
+  <button class="btn btn-dark" onclick="closeMobileMenu();openModal();" style="width:100%;justify-content:center;margin-top:16px;" data-i18n="mobile-cta">Check My Eligibility</button>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en-mobile" onclick="setLang('en')">EN</button>
+    <div class="lang-sep"></div>
+    <button class="lang-btn" id="btn-es-mobile" onclick="setLang('es')">ES</button>
+  </div>
 </div>
 
 <!-- ─── HERO ─── -->
@@ -521,7 +539,7 @@ nav.scrolled .lang-sep{background:var(--border)}
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat3">English & Spanish Support</span></li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg><span data-i18n="hero-feat4">Serving All 50 States</span></li>
         </ul>
-        <button class="btn btn-gold btn-lg hero-card-cta" onclick="openModal()" data-i18n="hero-card-cta">Start Eligibility Check</button>
+        <button class="btn btn-gold btn-lg hero-card-cta" onclick="openModal()" data-i18n="hero-card-cta">Check My Eligibility</button>
         <p class="hero-urgency" data-i18n="hero-urgency">Currently accepting a limited number of new clients.</p>
       </div>
     </div>
@@ -847,8 +865,14 @@ window.addEventListener('scroll',()=>{
 });
 
 // Mobile menu
-document.getElementById('hamburger').addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('open'));
-function closeMobileMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.classList.toggle('menu-open');
+});
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.classList.remove('menu-open');
+}
 
 // FAQ
 function toggleFaq(btn){
@@ -1061,16 +1085,16 @@ const TRANSLATIONS = {
   en: {
     'announce': '<strong>Limited Introductory Rate:</strong> $350 <span style="text-decoration:line-through;opacity:.7">$499</span> — Save $149 today.',
     'nav-how': 'How It Works', 'nav-includes': "What's Included", 'nav-pricing': 'Pricing', 'nav-faq': 'FAQ',
-    'nav-cta': 'Start Eligibility Check',
+    'nav-cta': 'Check My Eligibility',
     'hero-eyebrow': 'Marriage-Based Adjustment of Status',
     'hero-h1': 'Get Your Marriage Green Card <em>Without the Confusion</em>',
     'hero-sub': 'We prepare your complete Adjustment of Status package — forms, documents, and final review — in English or Spanish.',
-    'hero-cta1': 'Start Your Eligibility Check', 'hero-cta2': 'How It Works',
+    'hero-cta1': 'Check My Eligibility', 'hero-cta2': 'How It Works',
     'hero-card-label': 'Marriage Green Card Package', 'hero-price-tag': 'Limited-Time Offer',
     'hero-feat1': 'USCIS Forms Preparation', 'hero-feat2': 'Personalized Document Checklist',
     'hero-feat3': 'English & Spanish Support', 'hero-feat4': 'Serving All 50 States',
-    'hero-card-cta': 'Start Eligibility Check', 'hero-urgency': 'Currently accepting a limited number of new clients.',
-    'mobile-cta': 'Start Your Eligibility Check — $350',
+    'hero-card-cta': 'Check My Eligibility', 'hero-urgency': 'Currently accepting a limited number of new clients.',
+    'mobile-cta': 'Check My Eligibility',
     'trust1': 'English & Español', 'trust2': 'No hidden fees', 'trust3': '100% remote', 'trust4': 'All 50 States',
     'who-eyebrow': 'Who This Is For', 'who-title': 'Is this right for your case?',
     'yes-col': 'This is for you if:', 'no-col': 'This is NOT for you if:',
@@ -1132,12 +1156,12 @@ const TRANSLATIONS = {
     'hero-eyebrow': 'Ajuste de Estatus por Matrimonio',
     'hero-h1': 'Obtén Tu Green Card por Matrimonio <em>Sin la Confusión</em>',
     'hero-sub': 'Preparamos tu paquete completo de Ajuste de Estatus — formularios, documentos y revisión final — en inglés o en español.',
-    'hero-cta1': 'Comenzar Verificación de Elegibilidad', 'hero-cta2': 'Cómo Funciona',
+    'hero-cta1': 'Verificar Elegibilidad', 'hero-cta2': 'Cómo Funciona',
     'hero-card-label': 'Paquete de Green Card por Matrimonio', 'hero-price-tag': 'Oferta por Tiempo Limitado',
     'hero-feat1': 'Preparación de Formularios USCIS', 'hero-feat2': 'Lista Personalizada de Documentos',
     'hero-feat3': 'Soporte en Inglés y Español', 'hero-feat4': 'Servicio en Los 50 Estados',
-    'hero-card-cta': 'Iniciar Verificación de Elegibilidad', 'hero-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
-    'mobile-cta': 'Comenzar Verificación de Elegibilidad — $350',
+    'hero-card-cta': 'Verificar Elegibilidad', 'hero-urgency': 'Actualmente aceptamos un número limitado de nuevos clientes.',
+    'mobile-cta': 'Verificar Elegibilidad',
     'trust1': 'English & Español', 'trust2': 'Sin costos ocultos', 'trust3': '100% remoto', 'trust4': 'Todo EE.UU.',
     'who-eyebrow': 'Para Quién Es', 'who-title': '¿Es esto adecuado para tu caso?',
     'yes-col': 'Esto es para ti si:', 'no-col': 'Esto NO es para ti si:',
@@ -1198,6 +1222,8 @@ function setLang(lang){
   document.documentElement.lang=lang;
   document.getElementById('btn-en').classList.toggle('active',lang==='en');
   document.getElementById('btn-es').classList.toggle('active',lang==='es');
+  document.getElementById('btn-en-mobile').classList.toggle('active',lang==='en');
+  document.getElementById('btn-es-mobile').classList.toggle('active',lang==='es');
   const t=TRANSLATIONS[lang];
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key=el.getAttribute('data-i18n');
